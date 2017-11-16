@@ -1,0 +1,87 @@
+.fl_detail{
+    display:flex;flex-direction:column;width:100%;height:100%;font-size:12px;
+    main{flex:1;background:#f0efef;overflow-y:auto;}
+    header{
+        background:#fff;margin-bottom:10px;
+        ul{border-bottom:1px solid #f0efef;}
+        li{
+            position:relative;
+            img{margin:0 auto;width:100%;}
+            p{line-height:40px;}
+        }
+        .icon{
+            position:fixed;width:100%;z-index:999;
+            i{position:absolute;background:#000;color:#fff;left:7px;top:10px;width:24px;height:24px;border-radius:50%;line-height:24px;text-align:center;}
+            .glyphicon-shopping-cart{left:auto;right:37px;}
+            .glyphicon-option-horizontal{left:auto;right:7px;}
+        }
+        .logo{
+            border-bottom:1px solid #f0efef;overflow:hidden;
+            img{float:left;width:20%;}
+            div{float:left;width:55%;}
+            h2{
+                font-weight:400;font-size:16px;margin-top:20px;
+                span{font-size:12px;color:#fbd200;background:#000;padding:5px;border-radius:5px;margin-left:12px;position:relative;}
+                i{position:absolute;left:-10px;top:50%;width:0;height:0;border:5px solid #fff;border-right-color:#000;transform:translate(0,-50%);}
+            }
+            p{
+                color:#999;margin-top:5px;
+                span:first-child{border-right:1px solid #cbcbcb;margin-right:10px;padding-right:10px;}
+            }
+            a{float:left;color:#373737;padding:5px;border:1px solid #373737;margin-top:25px;}
+        }
+    }
+    .fl_details{
+        background: #fff;
+        .link{display:flex;align-items:center;justify-content:space-around;border-top:1px solid #e1e2e3;border-bottom:1px solid #e1e2e3;}
+        a{
+            color:#1d1d1d;line-height:35px;text-decoration:none;font-size:16px;
+            &:first-child{border-bottom:4px solid #000;font-weight:600;}
+        }
+        h2{
+            text-align:center;font-size:16px;line-height:66px;
+            span{line-height:30px;border-bottom:4px solid #e0e0e0;font-weight:600;display: inline-block;line-height: 50px;}
+        }
+        .fl_pramas li{
+            display:flex;justify-content:space-between;align-items:center;
+            &:nth-child(odd){background: #f0efef;}
+            span{line-height:30px;}
+        }
+        li{list-style:disc inside;}
+    }
+    #detail{
+        padding:10px;
+        h3{font-size:16px;font-weight:400;line-height:30px;}
+        img{width:100%;margin-top:10px;}
+        p{line-height:20px;}
+    }
+    footer{
+        height:40px;border-top:1px solid #f0efef;line-height:40px;overflow:hidden;
+        .glyphicon-shopping-cart{font-size:20px;margin-left:15px;padding-right:20px;border-right:1px solid #000;}
+        span{
+            color:#fff;padding:6px 20px;background:#000;margin-left:20px;border-radius:8px;
+            &:last-child{background: #ed5702;}
+        }
+    }
+    #pop{
+        width:100%;height:100%;position:absolute;display:none;
+        .cover{background:#000;opacity:0.5;position:absolute;width:100%;height:100%;z-index:888;}
+        .fl_pop{background:#fff;position:absolute;left:0;bottom:0;z-index:999;}
+        img{width:25%;display:inline-block;margin-right:10px;float:left}
+        li{
+            color:#858585;line-height:45px;margin-left:10px;
+            em{margin-left:15px;color:#000;padding:5px;border:1px solid #000;border-radius:5px;}
+            div{
+                float:left;width: 71%;height:90px;
+                p{line-height:36px;}
+            }
+            p>span{border:1px solid #000;border-radius:5px;margin-left:15px;width:68px;display:inline-block;height: 30px;line-height: 30px;font-size:15px;    text-align: center;}
+        }
+        .number{margin: 0;border:0 none;margin:0 5px;}
+        .addType{
+            line-height: 40px;border-top:1px solid #f0efef;text-align:center;height: 40px;
+            em{color:#fff;padding:6px 20px;background:#000;border-radius:8px;border:0 none;}
+        }
+        .glyphicon-remove-circle{position:absolute;right:0;top:0;font-size:18px;}
+    }
+}

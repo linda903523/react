@@ -1,0 +1,104 @@
+.mainsearch{
+    padding-top:50px;background:#F1F0F0;
+}
+.search_top{
+    display:flex;padding:8px;height:50px;border-bottom:1px solid #9A999A;position:fixed;top:0;left:0;width:100%;box-sizing:border-box;z-index:99;background:white;
+    .back{
+        color:#ccc;display:block;line-height:30px;font-size:30px;width:30px;
+    }
+    .search{
+        flex:1;display:flex;padding:5px;background:#E6E6E6;
+        input{flex:1;border:none;outline:none;background:#E6E6E6;margin-left:10px;}
+        .keyword{position:relative;margin-top:2px;
+            .title{
+                text-decoration:underline;
+                color:black;
+            }
+            .keylist{
+                position:absolute;
+                width:400%;
+                transform:scale(0);
+                height:0;
+                background:#222;
+                left:-30px;top:30px;
+                color:white;
+                text-align:center;
+                transition:all 0.3s;
+                opacity:0;
+                &.keylist1{
+                   opacity:1;
+                    transform:scale(1);
+                    height:60px;
+                }
+                li{
+                    line-height:26px;
+                    text-decoration:underline;
+                    &:nth-child(1){
+                        border-bottom:1px solid white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.history{
+    padding:10px;background:white;border-bottom:1px solid #ddd;
+    .ht{
+        display:flex;justify-content:space-between;color:#7D7C7D;padding-bottom:10px;
+    }
+    .hl{display:flex;flex-wrap:wrap;
+        li{
+            padding:5px 10px;background:#F6F6F6;margin-right:10px;margin-bottom:10px;
+            a{
+                color:#171717
+            }
+        }
+    }
+}
+
+.goodsrank{margin-top:8px;padding-bottom:10px;background:white;border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;padding-top:10px;
+    .rank{text-align:center;font-size:14px;color:#171717;font-weight:bold;}
+    .boxl{
+        height: 80px;
+          width: 100%; 
+          overflow: hidden;
+    }
+    .boxlist{width:100%;overflow-x: scroll;overflow-y: hidden; height: 106px;}
+    .ranklist{ 
+        padding:10px;box-sizing:border-box;height:100px;width:220%;
+        img{
+            width:80px;height:70px;float:left
+        }  
+    }
+}
+.goodsshow{margin-top:10px;background:white;border-top:1px solid #ddd;padding-top:10px;
+    .show_title{
+        text-align:center;font-size:14px;color:#171717;font-weight:bold;
+    }
+    .rxlist{
+        li{
+            display:flex;height:120px;
+            img{
+                width:35%;
+                height:100%;
+            }
+            div{flex:1;
+                .rx_title{
+                    padding-top:10px;letter-spacing:2px;font-size:14px;
+                }
+                .rx_xiaoliang{
+                    padding-top:5px;
+                    span{
+                        color:orange;
+                    }
+                }
+                .rx_price{
+                    color:red;padding-top:5px;
+                }
+            }
+            
+        }
+    }
+}
