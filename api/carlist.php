@@ -11,32 +11,34 @@
     
     $size = isset($_GET['size']) ? $_GET['size'] : '';
 
-    $sql = "select username from carlist where username=".$username;
+    $sql = "select * from carlist where username=".$username;
     
     $result = $conn->query($sql);
     
     if($result->num_rows>0){
         
-        $sql = "select username from carlist where goodsid=".$goodsid;
+        $sql = "select * from carlist where goodsid=$goodsid ' and color='$color ' and size='$size ";
 
         $result = $conn->query($sql);
 
         if($result->num_rows>0){
-
-            $sql = "update carlist set number=number+".$number;
-
-            $result = $conn->query($sql);
-
-            echo json_encode($result,JSON_UNESCAPED_UNICODE);
-
-        }else{
             
-            $sql = "insert into carlist (goodsid,username,number,color,size) values('$goodsid','$username','$number','$color','$size')";
+            // if($rows[0]['color'] == $color && $rows[0]['size'] == $size){
 
-            $result = $conn->query($sql);
+                $sql = "update carlist set number=number+".$number;
 
-            echo json_encode($result,JSON_UNESCAPED_UNICODE);
+                $result = $conn->query($sql);
+
+                echo json_encode($result,JSON_UNESCAPED_UNICODE);
+            // }
         }
+    }else{
+            
+        $sql = "insert into carlist (goodsid,username,number,color,size) values('$goodsid','$username','$number','$color','$size')";
+
+        $result = $conn->query($sql);
+
+        echo json_encode($result,JSON_UNESCAPED_UNICODE);
     }
 
     $conn->close();

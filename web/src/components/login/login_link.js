@@ -6,7 +6,6 @@ class Logins extends Component{
     loginUser(){
         $('.login_pass').removeClass('active')
         $('.login_user').addClass('active')
-        console.log(22)
     }
     loginPass(){
         $('.login_state').css({display:'none'}) 

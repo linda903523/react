@@ -64,7 +64,7 @@ class LoginComponent extends React.Component{
 
                         document.cookie = 'cookie='+xhr.responseText+';expires=' + date.toString();
                         // document.cookie=xhr.responseText;
-                        hashHistory.push({pathname:'/b'});
+                        hashHistory.push({pathname:'/home'});
                     }
                 }
             }
@@ -84,7 +84,8 @@ class LoginComponent extends React.Component{
                     if(xhr.readyState === 4){
                         // console.log(xhr.responseText)
                         if(xhr.responseText == "注册成功"){
-                            $('.shade').css({display:'block'})
+                            alert('恭喜你！注册成功！')
+                            hashHistory.push({pathname:'/login'});
                         } else {
                             alert(xhr.responseText)
                         }
@@ -107,13 +108,6 @@ class LoginComponent extends React.Component{
     render(){
         return (
             <div id="box">
-                <div className="shade">
-                    <div className="shade_cen">
-                        <h2>恭喜你！</h2>
-                        <h2>注册成功</h2>
-                        <Link to="login"><input type="button" onClick={this.changeShade} value="确定"/></Link>
-                    </div>
-                </div>
                 <div id="main">
                     <div className="Switch">
                         <span onClick={this.chnageLogin} className="on_login"><Link to="/login">登录</Link></span>

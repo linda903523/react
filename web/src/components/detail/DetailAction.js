@@ -54,7 +54,7 @@ export function popNone(){
 
 var color = ''
 var size = '';
-var number = '';
+var number = 1;
 // 给选中的颜色和尺寸添加样式
 export function choseColor(e){
     var emlist = e.target.parentNode.children;
@@ -107,6 +107,19 @@ export function jia(index){
 
 // 添加到购物车
 export function addToCar(idx,id){
+    var pop = document.getElementById('pop');
+    pop.style.display = 'none';
+    var cookies = document.cookie;
+    var username = '';
+    
+    if(cookies.length>0){
+        var arr = cookies.split('; ');
+        arr.forEach(function(item){
+            var temp = item.split('=');
+            username = temp[1];
+        })
+    }
+    
     return {
         types:['Beforedetail', 'detailed', 'detailError'],
         url:baseUrl+'carlist.php',
@@ -114,7 +127,8 @@ export function addToCar(idx,id){
             goodsid:id,
             color:color,
             size:size,
-            number:number
+            number:number,
+            username:username
         }
     }
 }
