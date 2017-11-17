@@ -1,1 +1,0 @@
-export default 'http://10.3.137.212:3002/api/'
