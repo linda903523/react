@@ -15,6 +15,4 @@
     }
     
     $result->close();
-
-    $conn->close();
 ?>

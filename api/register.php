@@ -7,7 +7,7 @@
         echo "无法注册";
     } else{
         $sql = "select username from register where username='$user' ";
-        // $sql = "select * from register ";
+        
         $result = $conn->query($sql);
         if($result->num_rows>0){
             echo "用户名已存在";
@@ -28,6 +28,4 @@
     }
 
     $result->close();
-
-    $conn->close();
 ?>
