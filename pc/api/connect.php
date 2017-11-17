@@ -1,9 +1,9 @@
 <?php
 	// 配置参数
-	$servername = '10.3.137.195';
+	$servername = 'localhost';
 	$username = 'root';
 	$password = '';
-	$database = 'react_test';
+	$database = 'react';
 
 	// 1）连接数据库
 	$conn = new mysqli($servername,$username,$password,$database);
@@ -15,5 +15,4 @@
 
 	// 设置字符集
 	$conn->set_charset('utf8');
-
 ?>

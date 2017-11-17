@@ -82,7 +82,7 @@
 		//密码
 		$password = isset($_REQUEST['password']) ? $_REQUEST['password'] : '';
 
-		$sql = "select * from user where `username` = '$username' and `password` = '$password';";
+		$sql = "select * from register where `username` = '$username' and `password` = '$password';";
 
 		$result = $conn -> query($sql);
 
@@ -100,12 +100,12 @@
 	//获取下拉选项
 	if($type == 'getSelect'){
 
-		$sql1 = "select distinct decorations from goods;";
+		$sql1 = "select distinct decorations from $table;";
 
 		$result1 = $conn->query($sql1);
 		$row1 = $result1->fetch_all(MYSQLI_ASSOC);
 
-		$sql2 = "select distinct type from goods;";
+		$sql2 = "select distinct type from $table;";
 
 		$result2 = $conn->query($sql2);
 		$row2 = $result2->fetch_all(MYSQLI_ASSOC);
