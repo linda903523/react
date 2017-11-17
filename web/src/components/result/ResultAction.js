@@ -2,7 +2,7 @@ import baseUrl from '../../utils/baseUrl.js';
 
 export function search(searchObj){
     return {
-        types: ['BeforeRequest1', 'Requested1', 'RequestError1'],
+        types: ['BeforeRequest1', 'Reqres', 'RequestError1'],
         url: baseUrl+'result.php',
         data:{
             collection:searchObj.key,

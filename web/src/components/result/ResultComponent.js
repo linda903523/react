@@ -4,8 +4,7 @@ import * as ResultAction from './ResultAction.js';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import './result.scss'
 class ResultComponent extends React.Component{
-    componentDidMount(){
-        
+    componentDidMount(){        
         window.scrollTo(0,0);
         var searchObj = this.props.router.location.query;
         this.props.search(searchObj);
@@ -59,8 +58,7 @@ class ResultComponent extends React.Component{
             })
         }else{
             var lis =<h1>抱歉，没有找到你要的东西</h1>
-        }
-        
+        }        
         return (
             <div>
                 <div className="result_top">
@@ -73,14 +71,12 @@ class ResultComponent extends React.Component{
                     </ul>
                 </div>
             </div>
-
         )
     }
 
 }
 
 const mapStateToProps = function(state){
-    console.log(state)
     return {
         dataset2:state.result.dataset || [],
         loading: state.result.loading || false

@@ -4,7 +4,7 @@ export default function StudentReducer(state = {}, action){
         case 'BeforeRequest1':
             reState.loading = true;
             break;
-        case 'Requested1':
+        case 'Reqres':
             reState.loading = false;
             reState.dataset = action.dataset;
             break;

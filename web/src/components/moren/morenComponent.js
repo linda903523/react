@@ -14,10 +14,6 @@ class MoComponent extends React.Component{
     }
 }
 const mapStateToProps = function(state){
-   // console.log(state.student.bb)
-    return {
-        
-    }
-
+    return {}
 }
 export default connect(mapStateToProps)(MoComponent)

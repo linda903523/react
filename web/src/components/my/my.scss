@@ -21,8 +21,12 @@
 .xc_container .cdiv-4 p{text-align:center;padding:15px 30px;font-size:12px;}
 .xc_container .cdiv-4 h3 p{padding: 0;}
 .xc_container .cdiv-4 p i{font-size:10px;}
-.xc_container .cdiv-5{padding:0px  15px 20px 15px;border-bottom:1px solid #ddd;}
-.xc_container .cdiv-5 img{width:100%;}
+.xc_container .cdiv-5{
+    padding:0px  15px 20px 15px;border-bottom:1px solid #ddd;
+    img{width:51%;float:left;}
+    div{float:left;width:49%;}
+    p{line-height:80px;padding: 0;text-align:left;}
+}
 .xc_container .cdiv-6{padding:10px 15px; display:flex; justify-content: space-between;}
 .xc_container .cdiv-6 i{margin-top:3px;}
 .xc_container .tiao{height:8px;background-color:#f0efef;}

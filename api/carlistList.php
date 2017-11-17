@@ -3,7 +3,7 @@
 
     $username = isset($_GET['username']) ? $_GET['username'] : '';
 
-    $sql = "select * from carlist where username='$username'";
+    $sql = "select * from list where username='$username'";
     
     $result=$conn->query($sql);
     
@@ -22,7 +22,7 @@
 
     $b=implode(",",$a);
     
-    $sql1="select*from goods where id in(".($b).")";
+    $sql1="select * from goods where id in(".($b).")";
     
     $result1=$conn->query($sql1);
     

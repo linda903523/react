@@ -4,10 +4,10 @@ export default function StudentReducer(state = {}, action){
         case 'BeforeRequest':
             reState.loading = true;
             break;
-        case 'Req2':
+        case 'Reqbuy1':
             reState.dataset =action.dataset;
             break;
-        case 'Req10':
+        case 'Reqbuy4':
             // reState.dataset =action.dataset;
             break;
         default:

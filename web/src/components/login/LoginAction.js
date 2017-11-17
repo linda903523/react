@@ -11,7 +11,7 @@ export function changeRegister(){
 }
 export function Sad(username,password){
     return {
-        types: ['BeforeRequest', 'Requested', 'RequestError'],
+        types: ['BeforeRequest', 'Reqlogin', 'RequestError'],
         url: baseUrl+'login.php?username='+username+'&password='+password,
         type: 'get'
         

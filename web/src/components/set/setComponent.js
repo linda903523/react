@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
+import {Link} from 'react-router';
 
 class SetComponent extends React.Component{
     componentDidMount(){

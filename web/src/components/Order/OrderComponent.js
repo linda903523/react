@@ -8,9 +8,6 @@ import './order.scss';
 class OrderComponent extends React.Component{
     componentDidMount(){
     }
-    block(){
-        show:true
-    }
     render(){
         return (
             <div className="xc_container">
@@ -32,10 +29,7 @@ class OrderComponent extends React.Component{
         )
     }
 }
-const mapStateToProps = function(state){
-   
-    return {
-       // show:state.order.show || false,
-    }
+const mapStateToProps = function(state){   
+    return {}
 }
 export default connect(mapStateToProps,OrderAction)(OrderComponent)

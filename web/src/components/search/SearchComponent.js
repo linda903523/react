@@ -105,7 +105,7 @@ class SearchComponent extends React.Component{
                             </div>
                         </div>
                         <input type="text" placeholder="搜毒文、商品" id="word"/>
-                        <button onClick={this.result.bind(this)}>sea</button>
+                        <button onClick={this.result.bind(this)}>搜索</button>
                     </div>
                 </div>
                 {hst}

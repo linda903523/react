@@ -1,14 +1,11 @@
-export default function StudentReducer(state = {}, action){
+export default function list1Reducer(state = {}, action){
     var reState = JSON.parse(JSON.stringify(state));
     switch(action.type){
         case 'BeforeRequest':
             reState.loading = true;
             break;
-        case 'Req9':
+        case 'Reqlist1':
             reState.dataset = action.dataset;
-            break;
-        case 'Req10':
-            
             break;
         default:
             reState.loading = false;

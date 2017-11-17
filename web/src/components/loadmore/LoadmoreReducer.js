@@ -5,7 +5,7 @@ export default function LoadmoreReducer(state = {}, action){
         case 'BeforeRequest':
             reState.loading = true;
             break;
-        case 'Requested':
+        case 'Reqload':
             reState.loading = false;
             if(reState.pageNo>action.maxpage){
                 return reState;

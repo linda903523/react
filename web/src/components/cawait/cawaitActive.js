@@ -1,11 +1,11 @@
 import baseUrl from '../../utils/baseUrl.js';
 
 export function Init2(){
+    var cookies = document.cookie;
+    var username = cookies.slice(8,-1);
     return {
-        types: ['BeforeRequest', 'req7', 'RequestError'],
-        url: baseUrl+'carlist.php/'
+        types: ['BeforeRequest', 'Reqca', 'RequestError'],
+        url: baseUrl+'fahuo.php',
+        data:{username:username}
     }
-}
-export function Init3(a){
-   // console.log(a)
 }

@@ -6,6 +6,9 @@ import {Link} from 'react-router';
 import './my.scss';
 
 class MyComponent extends React.Component{
+    componentDidMount(){
+        this.props.carlist1();
+    }
     render(){
         return (
             <div className="xc_container">
@@ -28,7 +31,7 @@ class MyComponent extends React.Component{
                      </div>
                         <ul className="cul-1">
                             <li className="cli-1"><Link to="buycar"><i className="glyphicon glyphicon-shopping-cart i"></i><span>购物车</span></Link></li>
-                            <li><Link to="order"><i  className="glyphicon glyphicon-list-alt i"></i><span>我的订单</span></Link></li>
+                            <li><Link to="all"><i  className="glyphicon glyphicon-list-alt i"></i><span>我的订单</span></Link></li>
                         </ul>
                         <div className="tiao"></div>
                     <div className="cdiv-3">
@@ -49,9 +52,22 @@ class MyComponent extends React.Component{
                     <div className="tiao"></div>
                     <div className="cdiv-4">
                         <p><i className="glyphicon glyphicon-plus-sign"></i>我中的毒</p>
-                        <h3><p>你还没中毒过任何毒物</p></h3>
                         <div className="cdiv-5">
-                            <img src="./src/img/j2.png"/>
+                            <ul>
+                                {
+                                    (this.props.carlistMy ? this.props.carlistMy : []).map(function(obj,idx){
+                                        return (
+                                            <li key={'carlistMy'+idx}>
+                                                <img src={obj.img} />
+                                                <div>
+                                                    <p>{obj.name}</p>
+                                                    <strong>{obj.price}元</strong>
+                                                </div>
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
                         </div>
                     </div>
                     <div className="tiao"></div>
@@ -78,7 +94,7 @@ class MyComponent extends React.Component{
                 <div className="fl_bottom">
                     <ul>
                         <Link to="home"><i className="glyphicon glyphicon-hand-right"></i>推荐</Link>
-                        <Link to=""><i className="glyphicon glyphicon-star"></i>社区</Link>
+                        <Link to="buycar"><i className="glyphicon glyphicon-shopping-cart"></i>购物车</Link>
                         <Link to="shopping"><i className="glyphicon glyphicon-gift"></i>商店</Link>
                         <Link to="my"><i className="glyphicon glyphicon-user"></i>我的</Link>
                     </ul>
@@ -90,6 +106,7 @@ class MyComponent extends React.Component{
 const mapStateToProps = function(state){
     return {
         loading: state.my.loading,
+        carlistMy:state.my.dataset || []
     }
 }
 export default connect(mapStateToProps, MyAction)(MyComponent)

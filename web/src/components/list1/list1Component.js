@@ -7,6 +7,7 @@ import './list1.scss';
 class List1Component extends React.Component{
     componentDidMount(){
         this.props.Init9();
+        this.props.Init8(this.props.list)
     }
     render(){
         return (
@@ -18,65 +19,67 @@ class List1Component extends React.Component{
                     <div className="Odiv-1"><p>确认订单</p></div>
                 </header>
                 <div className="body libody">
-                    <img src="./src/imgs/a.png"/>
+                    <img src="./src/img/a.png" className="imglist"/>
                     <p>请填写收货地址</p>
                     <div className="tiao"></div>
                     <div className="lidiv-1">
-                    <div><p><img src="./src/imgs/b.png"/>毒物商店</p></div>
+                        <div>
+                            <p><img src="./src/img/b.png" className="imglist"/>毒物商店</p>
+                        </div>
                         <ul className="liul-1">
                             <li><spapn>正品保证</spapn></li>
                             <li><span>极速发货</span></li>
                             <li><span>无忧退货</span></li>
                         </ul>
                         <ul className="listul">
-                                {
-                                   (this.props.list ? this.props.list : []).map((item,index)=>{
-                                        return (
-                                            <li key={'li'+index} >
-                                                    <Link to={{
-                                                            pathname:'detail',
-                                                            query:{
-                                                                id:item.id
-                                                            }
-                                                        }}>
-                                                        <img src={item.img}/>
-                                                    </Link>
-                                                    <div className="lidiv-0">
-                                                        <Link to={{
-                                                            pathname:'detail',
-                                                            query:{
-                                                                id:item.id
-                                                            }
-                                                        }}>
-                                                            <p className="lip-2">{item.name}</p>
-                                                        </Link>    
-                                                        <p className="lip-1">x{item.number}</p>
-                                                    </div>
-                                            </li>
-                                        )
-                                    })
-                                }
+                            {
+                               (this.props.list ? this.props.list : []).map((item,index)=>{
+                                    return (
+                                        <li key={'li'+index} >
+                                            <Link to={{
+                                                    pathname:'detail',
+                                                    query:{
+                                                        id:item.id
+                                                    }
+                                                }}>
+                                                <img src={item.img} className="imglist-2"/>
+                                            </Link>
+                                            <div className="lidiv-0">
+                                                <Link to={{
+                                                    pathname:'detail',
+                                                    query:{
+                                                        id:item.id
+                                                    }
+                                                }}>
+                                                    <p className="lip-2">{item.name}</p>
+                                                </Link>    
+                                                <p className="lip-1">x{item.number}</p>
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                     <div className="liul-2">
                         <p>配送方式 :</p>
                         <ul className="listul-1">
                             <li>
-                            <i className="glyphicon glyphicon-ok-sign"></i><span>元店铺满399.0</span><span>包邮</span>
+                                <i className="glyphicon glyphicon-ok-sign"></i>
+                                <span>元店铺满399.0</span><span>包邮</span>
                             </li>
                             <li><span>商品金额：</span><span> ￥ </span></li>
                             <li><span>毒币抵扣：</span><span>- ￥ 0.00</span></li>
                             <li><span>运费：</span><span>+ ￥ 0.00</span></li>
                             <li><span>价格合计：</span><span>￥</span></li>
                         </ul>
-                        <input type="text"/>
-                       
+                        <input type="text" />                       
                     </div>
                 </div>
                 <footer >
                     <ul className="listfooter">
-                        <li>总价：<span></span></li>
-                        <li><button>确认下单</button></li>
+                        <li>总价：<span className="zongjia"></span></li>
+                        <Link to="shipments"><li onClick={this.props.dan.bind(this,this.props.list)}><button>确认下单</button></li></Link>
                     </ul>
                 </footer>
             </div>

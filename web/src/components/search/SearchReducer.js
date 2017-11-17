@@ -4,7 +4,7 @@ export default function SearchReducer(state = {}, action){
         case 'BeforeReques2':
             reState.loading = true;
             break;
-        case 'Requested2':
+        case 'Reqsea1':
             reState.loading = false;
             reState.dataset = action.dataset;
             break;

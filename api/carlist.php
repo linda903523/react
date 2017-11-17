@@ -48,7 +48,13 @@
             echo json_encode($result,JSON_UNESCAPED_UNICODE);
         }
     }else{
-        echo '未找到用户名，请核对';
+        $sql = "insert into carlist (goodsid,username,number,color,size) values($goodsid,'$username',$number,'$color',$size)";
+
+        $result = $conn->query($sql);
+
+        $result->close();
+
+        echo json_encode($result,JSON_UNESCAPED_UNICODE);
     }
 
     $conn->close();

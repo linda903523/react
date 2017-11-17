@@ -3,7 +3,7 @@
 .xc_container .Odiv-1{line-height:50px;}
 .xc_container p{text-align:center;}
 .xc_container .Oul-1{display:flex;flex-direction:row;line-height:60px;background-color:#fff;}
-.xc_container .Oul-1 li{width:20%;text-align:center;}
+.xc_container .Oul-1 li{width:20%;text-align:center;border-bottom:4px solid #fff;}
 .xc_container .Oul-1 li:hover{border-bottom:4px solid #000;}
 .xc_container .i12{float:left;line-height:50px;}
 .xc_container .false{display:none;}
@@ -21,3 +21,9 @@
 .xc_container .moren{padding-top:60%;height:100%;}
 .xc_container .moren p{line-height:30px;}
 .xc_container .moren h4{color:#555;}
+.xc_container .ship-ul{display:flex;flex-direction:row;justify-content: space-between;border-top:1px solid #ddd;padding:15px 0px;}
+.xc_container .ship-ul img{width:20px;height:20px;margin:0px 20px;}
+.xc_container .ship-ul .li{padding-right:30px;color:red;}
+.xc_container .ship-ul1 li{display:flex;flex-direction:row;justify-content: space-between;padding:5px 20px;}
+.xc_container .ship-ul1 .li{justify-content: flex-end;padding-top:10px;}
+.xc_container .ship-ul1 .li div{width:100px;line-height:30px;text-align:center;border:1px solid #000;border-radius:20px;margin-left:10px;}

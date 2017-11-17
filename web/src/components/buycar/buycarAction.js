@@ -1,22 +1,21 @@
 import baseUrl from '../../utils/baseUrl.js';
+import $ from 'jquery';
 
 export function Init4(){
     var cookies = document.cookie;
     var username = cookies.slice(8,-1);
     return {
-        types: ['BeforeRequest', 'Req2', 'RequestError'],
-        url:baseUrl+'carlistList.php',
-        data:{
-            username:username
-        }
+        types: ['BeforeRequest', 'Reqbuy1', 'RequestError'],
+        url:baseUrl+'carlist1.php',
+        data:{username:username}
     }
 }
 export function jian(index,id){
     if(document.getElementsByClassName('number')[index].innerHTML>1){
         document.getElementsByClassName('number')[index].innerHTML--;
          return {
-            types: ['BeforeRequest', 'Req3', 'RequestError'],
-            url: baseUrl+'jian.php/',
+            types: ['BeforeRequest', 'Reqbuy2', 'RequestError'],
+            url: baseUrl+'jian.php',
             data:{goodsid:id}
         }
     }
@@ -26,8 +25,8 @@ export function jia(index,id){
         document.getElementsByClassName('number')[index].innerHTML++;
     }
     return {
-        types: ['BeforeRequest', 'Req4', 'RequestError'],
-            url: baseUrl+'add.php/',
+        types: ['BeforeRequest', 'Reqbuy3', 'RequestError'],
+            url: baseUrl+'add.php',
             data:{goodsid:id}
     }
 }
@@ -43,25 +42,12 @@ export function red(e){
     type:'red'
    }
 }
-export function jiesuan(){
+export function jiesuan(gather){
     return {
-        types: ['BeforeRequest', 'Req10', 'RequestError'],
-            url: baseUrl+'insert.php/',
+        types: ['BeforeRequest', 'Reqbuy4', 'RequestError'],
+            url: baseUrl+'insert.php',
             data:{
-                order:JSON.stringify(
-                  [{
-                  ordernumber:123456,
-                  goodsid:1,
-                  username:'徐翠',
-                  number:3
-                },
-                {
-                  ordernumber:123333,
-                  goodsid:3,
-                  username:'徐翠',
-                  number:5
-                }]
-                  )
+              order:JSON.stringify(gather)
             }
     }
 }

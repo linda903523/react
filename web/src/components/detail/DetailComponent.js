@@ -122,7 +122,7 @@ class DetailComponent extends React.Component{
                     </div>
                 </main>
                 <footer onClick={this.props.pop.bind(this)}>
-                    <i className="glyphicon glyphicon-shopping-cart"></i>
+                    <Link to="buycar"><i className="glyphicon glyphicon-shopping-cart"></i></Link>
                     <span className="fl_car">加入购物车</span>
                     <span className="fl_buy">立即购买</span>
                 </footer>

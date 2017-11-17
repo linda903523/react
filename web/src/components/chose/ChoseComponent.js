@@ -50,19 +50,19 @@ const mapStateToProps = function(state){
         dataset:[
             {
                 imgurl:'./src/img/ccc1.png',
-                tourl:'/home'
+                tourl:'/shopping'
             },
             {
                 imgurl:'./src/img/ccc2.png',
-                tourl:'/home'
+                tourl:'/listType/:2'
             },
             {
                 imgurl:'./src/img/ccc3.png',
-                tourl:'/home'
+                tourl:'/listType/:4'
             },
             {
                 imgurl:'./src/img/ccc4.png',
-                tourl:'/home'
+                tourl:'/listType/:5'
             },
             {
                 imgurl:'./src/img/ccc5.png',
@@ -74,35 +74,35 @@ const mapStateToProps = function(state){
             },
             {
                 imgurl:'./src/img/ccc7.jpg',
-                tourl:'/home'
+                tourl:'/listType/:11'
             },
             {
                 imgurl:'./src/img/ccc9.jpg',
-                tourl:'/home'
+                tourl:'/listType/:6'
             },
             {
                 imgurl:'./src/img/ccc10.jpg',
-                tourl:'/home'
+                tourl:'/listType/:9'
             },
             {
                 imgurl:'./src/img/ccc11.jpg',
-                tourl:'/home'
+                tourl:'/listType/:7'
             },
             {
                 imgurl:'./src/img/ccc12.jpg',
-                tourl:'/home'
+                tourl:'/listType/:1'
             },
             {
                 imgurl:'./src/img/ccc13.jpg',
-                tourl:'/home'
+                tourl:'/listType/:2'
             },
             {
                 imgurl:'./src/img/ccc14.jpg',
-                tourl:'/home'
+                tourl:'/listType/:8'
             },
             {
                 imgurl:'./src/img/ccc15.jpg',
-                tourl:'/home'
+                tourl:'/listType/:10'
             },
             {
                 imgurl:'./src/img/ccc16.jpg',

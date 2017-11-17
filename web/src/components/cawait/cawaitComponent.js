@@ -27,9 +27,7 @@ class AwaitComponent extends React.Component{
                 <div className="ediv-2">
                     <ul className="eul">
                         <li className="eli-2">更多</li>
-                        <li className="eli-1">查看物流</li>
-                        <li className="eli-1">卖了换钱</li>
-                        <li className="eli-1">评价</li>
+                        <Link to="cawait"><li className="eli-1">去发货</li></Link>
                     </ul>
                 </div>
             </div>

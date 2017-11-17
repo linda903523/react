@@ -1,9 +1,12 @@
 import baseUrl from '../../utils/baseUrl.js';
 
 export function Init1(){
+    var cookies = document.cookie;
+    var username = cookies.slice(8,-1);
     return {
-        types: ['BeforeRequest', 'Req1', 'RequestError'],
-        url: baseUrl+'goods.php/'
+        types: ['BeforeRequest', 'Reqeva', 'RequestError'],
+        url: baseUrl+'evaluate.php',
+        data:{username:username}
     }
 }
 
