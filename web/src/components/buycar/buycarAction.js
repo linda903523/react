@@ -1,9 +1,14 @@
 import baseUrl from '../../utils/baseUrl.js';
 
 export function Init4(){
+    var cookies = document.cookie;
+    var username = cookies.slice(8,-1);
     return {
         types: ['BeforeRequest', 'Req2', 'RequestError'],
-        url:baseUrl+'carlist.php'
+        url:baseUrl+'carlistList.php',
+        data:{
+            username:username
+        }
     }
 }
 export function jian(index,id){
@@ -39,7 +44,6 @@ export function red(e){
    }
 }
 export function jiesuan(){
-  console.log(99);
     return {
         types: ['BeforeRequest', 'Req10', 'RequestError'],
             url: baseUrl+'insert.php/',

@@ -1,4 +1,5 @@
 import baseUrl from '../../utils/baseUrl.js';
+import {hashHistory} from 'react-router';
 
 export function Init(params){
     return {
@@ -106,18 +107,23 @@ export function jia(index){
 }
 
 // 添加到购物车
-export function addToCar(idx,id){
+export function addToCar(idx,id,e){
     var pop = document.getElementById('pop');
     pop.style.display = 'none';
     var cookies = document.cookie;
-    var username = '';
-    
-    if(cookies.length>0){
-        var arr = cookies.split('; ');
-        arr.forEach(function(item){
-            var temp = item.split('=');
-            username = temp[1];
-        })
+    var username = cookies.slice(8,-1);
+
+    if(e.target.innerHTML == '加入购物车'){
+        clearTimeout(timer);
+        var smallPop = document.getElementsByClassName('fl_successAdd')[0]
+        smallPop.style.display = 'block';
+        var timer = setTimeout(function(){
+            smallPop.style.display = 'none';
+        },1000)
+    }
+
+    if(e.target.innerHTML == '立即购买'){
+        hashHistory.push({pathname:'/buycar'});
     }
     
     return {

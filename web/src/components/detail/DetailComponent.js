@@ -123,7 +123,8 @@ class DetailComponent extends React.Component{
                 </main>
                 <footer onClick={this.props.pop.bind(this)}>
                     <i className="glyphicon glyphicon-shopping-cart"></i>
-                    <span className="fl_car">加入购物车</span><span className="fl_buy">立即购买</span>
+                    <span className="fl_car">加入购物车</span>
+                    <span className="fl_buy">立即购买</span>
                 </footer>
                 <div id="pop">
                     <div className="cover"></div>
@@ -155,6 +156,7 @@ class DetailComponent extends React.Component{
                         <i className="glyphicon glyphicon-remove-circle" onClick={this.props.popNone.bind(this)}></i>
                     </div>
                 </div>
+                <p className="fl_successAdd">成功添加到购物车</p>
             </div>
         )
     }
