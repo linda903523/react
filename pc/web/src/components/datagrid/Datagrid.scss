@@ -1,0 +1,122 @@
+@import '../../utils/var.scss';
+
+.data-grid {
+	height: 100%;
+	min-height: 600px;
+	padding: 0 10px;
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		margin-bottom: 20px;
+		font-size: 10px;
+	}
+	img {
+		width: 30px;
+		border-radius: 6px;
+		box-shadow: 0px 4px 10px -4px #555;
+		cursor: pointer;
+	}
+	th {
+		text-align: center;
+		padding:0 10px;
+		height: 44px;
+		letter-spacing: 2px;
+	}
+	td {
+		padding:0 8px;
+		height: 44px;
+		text-align: center;
+	}
+	thead tr {
+		background: #FFFCD0;
+		color: #8A6800;
+	}
+	tbody tr:nth-of-type(2n) {
+		background: #FFFCDF;
+		color: #6B7182;
+		position: relative;
+		z-index: 1;
+	}
+	tbody tr {
+		transition: all .15s;
+		&:hover {
+			background: #FFFCDF;
+			position: relative;
+			z-index: 200;
+			box-shadow: 0px 0px 0px 0px #fff, 0px 0px 8px 0px #EAE09B;
+		}
+		.editBtn {
+			height: 24px;
+			background: $main;
+			color: #fff;
+			border-color: $main;
+			border-radius: 30px;
+		}
+		.delBtn.ant-btn {
+			height: 24px;
+			border-color: #F88462;
+			background: #F88462;
+			color: #fff;
+			border-radius: 30px;
+		}
+	}
+
+	.searchModule {
+		margin-bottom: 16px;
+		input[type="text"] {
+			width: 400px;
+			margin-left: 6px;
+		}
+
+		.searchBtn {
+			background: $main;
+			margin-left: 6px;
+		}
+	}
+}
+.alterWindow {
+	width: 700px;
+	label > span {
+		display: inline-block;
+		width: 100px;
+		text-align: right;
+		margin-right: 20px;
+	}
+	p {
+		display: inline-block;
+		width: 100px;
+	}
+	input[type="text"] {
+		width: 260px;
+		margin-right: 6px;
+	}
+	.formModule {
+		margin-bottom: 20px;
+		padding-left: 40px;
+	}
+	.selectDiv {
+		display: block;
+		width: 60%;
+		margin: 16px 0;
+		margin-left: 120px;
+	}
+	.windowFooter {
+		padding: 12px 0;
+		border-top: 1px solid #ccc;
+		.ant-btn {	
+			margin-left: 86%;
+			width: 100px;
+		}
+	}
+	.ant-modal-body {
+		padding: 0;
+		padding-top: 40px
+
+	}
+}
+.paramsModule {
+	> label {
+		display: inline-block;
+		margin-bottom: 20px;
+	}
+}

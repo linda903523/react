@@ -1,0 +1,11 @@
+/* --------重置样式------- */
+body,html,#app{width: 100%;height:100%;font-size:12px;}
+body,dl,dd,h1,h2,h3,h4,h5,h6,p,form{margin:0;}
+ol,ul{margin:0; padding:0;}
+ul,ol,li{list-style:none;}
+ul{overflow: hidden;}
+img{display:block;border:0 none;}
+input{outline:none;border:0 none;}
+a{text-decoration:none;color:#000;}
+strong{color:#ea4f25;font-weight:400;}
+.glyphicon-search{color:#cacaca;}
