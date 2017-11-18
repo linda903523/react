@@ -5,12 +5,10 @@ export default function HomeReducer(state ={}, action){
         case 'BeforeRequest':
             reState.loading = true;
             break;
-
         case 'Requested':
             reState.loading = false;
             reState.dataset = action.dataset;
             break;
-
         case 'bb':
 			reState.bc += 2;
    }

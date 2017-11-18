@@ -112,6 +112,4 @@ const mapStateToProps = function(state){
         username:document.cookie.slice(8,-1)
     }
 }
-export default connect(mapStateToProps, MyAction)(MyComponent)
-                
-               
+export default connect(mapStateToProps, MyAction)(MyComponent)             

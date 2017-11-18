@@ -10,7 +10,7 @@ class ListComponent extends React.Component{
     componentDidUpdate(){
         var ul = document.getElementsByClassName('section1')[0].firstChild.children[1];
         var lis = ul.children;
-        ul.style.width = lis.length * 80 + 'px';     
+        ul.style.width = lis.length * 80 + 'px';
     }
     render(){
         return (
