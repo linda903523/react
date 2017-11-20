@@ -11,7 +11,6 @@ export function search(searchObj){
     }
 }
 
-
 export function clear(){
     return {
         type:'clear'

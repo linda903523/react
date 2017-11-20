@@ -38,8 +38,8 @@ class ShoppingComponent extends React.Component{
                 <div className="fl_bottom">
                     <ul>
                         <Link to="home"><i className="glyphicon glyphicon-hand-right"></i>推荐</Link>
-                        <Link to="buycar"><i className="glyphicon glyphicon-shopping-cart"></i>购物车</Link>
                         <Link to="shopping"><i className="glyphicon glyphicon-gift"></i>商店</Link>
+                        <Link to="buycar"><i className="glyphicon glyphicon-shopping-cart"></i>购物车</Link>
                         <Link to="my"><i className="glyphicon glyphicon-user"></i>我的</Link>
                     </ul>
                 </div>

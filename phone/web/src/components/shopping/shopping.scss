@@ -52,7 +52,7 @@
         ul{display:flex;justify-content:space-between;height:100%;}
         a{
             flex:1;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#cacaca;
-            &:nth-child(3){color:#eac502;}
+            &:nth-child(2){color:#eac502;}
         }
     }
 }

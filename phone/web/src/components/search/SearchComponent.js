@@ -40,8 +40,6 @@ class SearchComponent extends React.Component{
     getidx(idx){
         this.setState({idx:idx,show:false})
     }
-
-
     showkey(e){
         if(this.state.show){
             this.setState({show:false})
@@ -52,8 +50,6 @@ class SearchComponent extends React.Component{
     componentDidMount(){
         window.scrollTo(0,0);
         this.props.getHistory();
-
-
     }
     render(){
         var lis = this.props.keylist.map((item,idx)=>{
@@ -194,7 +190,7 @@ class SearchComponent extends React.Component{
                                 </div>
                             </li>
                             <li>
-                                <img src="./src/img/g2.png"/>
+                                <img src="./src/img/g6.png"/>
                                 <div>
                                     <p className="rx_title">钢铁侠头盔蓝牙音箱</p>
                                     <p className="rx_xiaoliang">销量:<span className="rx_qty">128</span></p>
@@ -209,9 +205,7 @@ class SearchComponent extends React.Component{
     }
 }
 
-
-const mapStateToProps = function(state){
-    
+const mapStateToProps = function(state){    
     return {
         keylist:['毒文','商品'],
         loading:state.search.loading,

@@ -5,11 +5,7 @@ import * as ListTypeAction from './ListTypeAction.js';
 
 class ListTypeComponent extends React.Component{
     componentDidMount(){
-        this.setState({state:this.props.params})
         this.props.Init(this.props.params);
-    }   
-    shouldComponentUpdate(){
-        return true;
     }
     render(){
         return (

@@ -14,6 +14,7 @@ export function clear(clearobj){
         data:clearobj
     }
 }
+
 export function add(addobj){
     return {
         types: ['BeforeRequest2', 'Reqsea3', 'RequestError3'],
