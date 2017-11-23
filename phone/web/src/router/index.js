@@ -4,8 +4,6 @@ import HomeComponent from '../components/home/HomeComponent'
 import SearchComponent from '../components/search/SearchComponent';
 import ResultComponent from '../components/result/ResultComponent.js';
 import ShoppingComponent from '../components/shopping/ShoppingComponent.js';
-import ListComponent from '../components/list/ListComponent.js';
-import ListTypeComponent from '../components/listType/ListTypeComponent.js';
 import DetailComponent from '../components/detail/DetailComponent.js';
 import LoginComponent from '../components/login/LoginComponent'
 import Login from '../components/login/login_link'
@@ -30,11 +28,7 @@ export default(
         <Route path="/home" component={HomeComponent}></Route>
         <Route path="/search" component={SearchComponent}></Route>
         <Route path="/result" component={ResultComponent}></Route>
-        <Route path="/shopping" component={ShoppingComponent}>
-            <IndexRoute component={ListComponent}/>
-            <Route path="/list" component={ListComponent}></Route>
-            <Route path="/listType/:type" component={ListTypeComponent}></Route>
-        </Route>
+        <Route path="/shopping" component={ShoppingComponent}></Route>
         <Route path="/detail/:id" component={DetailComponent}></Route>
         <Route path="log" component={LoginComponent}>
             <IndexRoute component={Login}/>

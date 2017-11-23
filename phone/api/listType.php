@@ -1,9 +1,9 @@
 <?php
     include 'connect.php';
 
-    $type = isset($_REQUEST['type']) ? $_REQUEST['type'] : '';
+    $decorations = isset($_REQUEST['decorations']) ? $_REQUEST['decorations'] : '';
 
-    $sql = 'select * from goods where type='.$type;
+    $sql = "select * from goods where decorations='$decorations'";
 
     $result=$conn->query($sql);
 

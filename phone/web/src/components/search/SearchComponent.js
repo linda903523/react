@@ -53,7 +53,7 @@ class SearchComponent extends React.Component{
     }
     render(){
         var lis = this.props.keylist.map((item,idx)=>{
-                return <li key={idx} onClick={this.getidx.bind(this,idx)}>{item}</li>
+            return <li key={idx} onClick={this.getidx.bind(this,idx)}>{item}</li>
         })
 
 
@@ -74,18 +74,13 @@ class SearchComponent extends React.Component{
                 </li>
             })
             var hst = <div className="history">
-                    <div className="ht">
-                        <span className="hs">历史搜索</span>
-                        <i onClick ={this.clear.bind(this)}>清空</i>
-                    </div>
-                    <ul className="hl">
-                        {   
-                            hist
-                        }
-                    </ul>
+                <div className="ht">
+                    <span className="hs">历史搜索</span>
+                    <i onClick ={this.clear.bind(this)}>清空</i>
                 </div>
+                <ul className="hl">{hist}</ul>
+            </div>
         }
-
 
         return(
             <div className="mainsearch">

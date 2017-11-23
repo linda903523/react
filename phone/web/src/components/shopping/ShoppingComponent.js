@@ -6,7 +6,70 @@ import SpinnerComponent from '../spinner/spinner';
 import './shopping.scss';
 
 class ShoppingComponent extends React.Component{
+    componentDidMount(){
+        this.props.Init();
+    }
     render(){
+        var listOther;
+        if(this.props.dataset.length>10){
+            var list = this.props.dataset.map((item,idx)=>{
+                return <li key={'rec'+idx}>
+                    <Link to={'detail/:'+item.id}><img src={item.img} /></Link>
+                    <strong>{item.price}元</strong>
+                    <p>{item.name}</p>
+                </li>                         
+            })
+            listOther = <div>
+                <img src="./src/img/banner.png" />
+                <section className="section1">
+                    <aside>
+                        <h2>毒家新品</h2>
+                        <ul style={{width:'880px'}}>{list}</ul>
+                    </aside>
+                    <div className="fl_img">
+                        <img src="./src/img/f1.png" />
+                        <img src="./src/img/f2.png" />
+                        <img src="./src/img/f3.png" />
+                        <div className="fl_bot">
+                            <img src="./src/img/f4.png" />
+                            <img src="./src/img/f5.png" />
+                        </div>
+                    </div>
+                </section>
+                <section className="section2">
+                    <div>
+                        <h2>毒友推荐</h2>
+                        <p>大家都在买</p>
+                        <ul className="part1">
+                            <li><img src="./src/img/g1.png" /></li>
+                            <li><img src="./src/img/g2.png" /></li>
+                            <li><img src="./src/img/g3.png" /></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2>毒家</h2>
+                        <p>只有这里</p>
+                        <ul>
+                            <li><img src="./src/img/y10.png" /></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        }else if(this.props.dataset.length>0 && this.props.dataset.length <= 10){
+            var list = this.props.dataset.map((item,idx)=>{
+                return <li key={'gar'+idx}>
+                    <Link to={'detail/:'+item.id}><img src={item.img} /></Link>
+                    <p>{item.name}</p>
+                    <strong>{item.price}元</strong>
+                </li>
+            })
+            listOther = <div>
+                <img src="./src/img/banner.png" />
+                <section className="section3">
+                    <ul>{list}</ul>
+                </section>
+            </div>
+        }
         return (
             <div className="fl_contain">
                 <SpinnerComponent show={this.props.loading}/>
@@ -18,22 +81,22 @@ class ShoppingComponent extends React.Component{
                     <div>
                         <nav>
                             <ul onClick={this.props.navChange.bind(this)}>
-                                <li><Link to="list">推荐</Link></li>
-                                <li><Link to="listType/:1">家居</Link></li>
-                                <li><Link to="listType/:2">理容</Link></li>
-                                <li><Link to="listType/:3">工具</Link></li>
-                                <li><Link to="listType/:4">玩物</Link></li>
-                                <li><Link to="listType/:5">运动</Link></li>
-                                <li><Link to="listType/:6">穿搭</Link></li>
-                                <li><Link to="listType/:7">影音</Link></li>
-                                <li><Link to="listType/:8">美食</Link></li>
-                                <li><Link to="listType/:9">文具</Link></li>
-                                <li><Link to="listType/:10">美酒</Link></li>
-                                <li><Link to="listType/:11">腕表</Link></li>
+                                <li>推荐</li>
+                                <li>家居</li>
+                                <li>理容</li>
+                                <li>工具</li>
+                                <li>玩物</li>
+                                <li>运动</li>
+                                <li>穿搭</li>
+                                <li>影音</li>
+                                <li>美食</li>
+                                <li>文具</li>
+                                <li>美酒</li>
+                                <li>腕表</li>
                             </ul>
                         </nav>
                     </div>
-                    <div className="fl_list">{this.props.children}</div>                  
+                    <div className="fl_list">{listOther}</div>                  
                 </main>
                 <div className="fl_bottom">
                     <ul>
@@ -50,7 +113,9 @@ class ShoppingComponent extends React.Component{
 
 var mapStateToProps = function(state){
     return {
-        loading:state.shopping.loading
+        loading:state.shopping.loading,
+        dataset:state.shopping.dataset || [],
+        itemset:state.shopping.itemset || []
     }
 }
 

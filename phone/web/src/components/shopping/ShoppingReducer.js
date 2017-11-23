@@ -4,7 +4,8 @@ export default function ShoppingReducer(state = {},action){
         case 'BeforeRequest':
             reState.loading = true;
             break;
-        case 'Requested':
+        case 'Reqlist':
+        case 'listType':
             reState.loading = false;
             reState.dataset = action.dataset;
             break;
