@@ -9,8 +9,6 @@ class MyComponent extends React.Component{
     componentDidMount(){
         this.props.carlist1();
     }
-    componentWillMount(){
-    }
     render(){
         return (
             <div className="xc_container">

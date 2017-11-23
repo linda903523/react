@@ -5,7 +5,7 @@ export function Init9(){
     var username = cookies.slice(8,-1);
     return {
         types: ['BeforeRequest', 'Reqlist1', 'RequestError'],
-         url: baseUrl+'carlistList.php',
+         url: baseUrl+'carlistOrder.php',
          data:{username:username}
     }
 }

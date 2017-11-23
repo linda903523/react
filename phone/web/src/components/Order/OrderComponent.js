@@ -6,8 +6,6 @@ import OrderAction from './OrderAction';
 import './order.scss';
 
 class OrderComponent extends React.Component{
-    componentDidMount(){
-    }
     render(){
         return (
             <div className="xc_container">

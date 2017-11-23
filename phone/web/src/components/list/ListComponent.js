@@ -47,18 +47,22 @@ class ListComponent extends React.Component{
                     <div>
                         <h2>毒友推荐</h2>
                         <p>大家都在买</p>
-                        <ul className="part1">
-                            <li><img src="./src/img/g1.png" /></li>
-                            <li><img src="./src/img/g2.png" /></li>
-                            <li><img src="./src/img/g3.png" /></li>
-                        </ul>
+                        <Link to="listType/:3">
+                            <ul className="part1">
+                                <li><img src="./src/img/g1.png" /></li>
+                                <li><img src="./src/img/g2.png" /></li>
+                                <li><img src="./src/img/g3.png" /></li>
+                            </ul>
+                        </Link>
                     </div>
                     <div>
                         <h2>毒家</h2>
                         <p>只有这里</p>
-                        <ul>
-                            <li><img src="./src/img/g4.png" /></li>
-                        </ul>
+                        <Link to="listType/:5">
+                            <ul>
+                                <li><img src="./src/img/y10.png" /></li>
+                            </ul>
+                        </Link>
                     </div>
                 </section>
             </div>

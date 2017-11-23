@@ -7,8 +7,7 @@ import './loadmore.scss';
 var lastpage = 2;
 
 class LoadmoreComponent extends React.Component{
-    componentDidMount(){
-       
+    componentDidMount(){       
         window.scrollTo(0,0);
         this.props.Init(this.props.pageNo,this.props.qty)
         window.onscroll = ()=>{
@@ -20,10 +19,6 @@ class LoadmoreComponent extends React.Component{
             }
         }
     }
-
-    // componentWillUpdate(nextProps,nextState){
-    //     console.log(nextProps,nextState)
-    // }
     render(){
         return (
             <div>

@@ -23,7 +23,7 @@ import DuComponent from '../components/du/duComponent';
 import OpinionComponent from '../components/opinion/opinionComponent';
 import SetComponent from '../components/set/setComponent';
 import MoComponent from '../components/moren/morenComponent';
-import List1Component from '../components/list1/list1Component';
+import ListOrderComponent from '../components/listOrder/listOrderComponent';
 
 export default(
     <Router>
@@ -42,7 +42,7 @@ export default(
             <Route path="/register" component={Register} />
         </Route>        
         <Route path="/my" component={MyComponent}></Route>
-        <Route path="/list1" component={List1Component}></Route>
+        <Route path="/listOrder" component={ListOrderComponent}></Route>
         <Route path="/buycar" component={BuycarComponent}></Route>
         <Route path="/du" component={DuComponent}></Route>
         <Route path="/set" component={SetComponent}></Route>

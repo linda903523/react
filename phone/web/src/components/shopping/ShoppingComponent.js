@@ -48,10 +48,9 @@ class ShoppingComponent extends React.Component{
     }
 }
 
-var mapStateToProps = function(state){    
+var mapStateToProps = function(state){
     return {
-        loading:state.shopping.loading,
-        dataset:state.shopping.dataset || []
+        loading:state.shopping.loading
     }
 }
 

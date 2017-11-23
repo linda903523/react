@@ -1,4 +1,4 @@
-export default function list1Reducer(state = {}, action){
+export default function ListOrderReducer(state = {}, action){
     var reState = JSON.parse(JSON.stringify(state));
     switch(action.type){
         case 'BeforeRequest':

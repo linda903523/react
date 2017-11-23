@@ -1,4 +1,6 @@
 <?php
+    // 详情页，选择商品加入购物车
+
     include 'connect.php';
 
     $goodsid = isset($_GET['goodsid']) ? $_GET['goodsid'] : '';

@@ -6,8 +6,19 @@ import * as ListTypeAction from './ListTypeAction.js';
 class ListTypeComponent extends React.Component{
     componentDidMount(){
         this.props.Init(this.props.params);
+        var type = this.props.params.type ? this.props.params.type.slice(1) : '';
+        var nav = document.getElementsByTagName('nav')[0];
+        var lis = nav.firstChild.children;
+        for(var i=0;i<lis.length;i++){
+            lis[i].firstChild.style.color = '#bebebe';
+        }
+        if(type){
+            lis[type].firstChild.style.color = '#ea4f25';
+        }else{
+            lis[0].firstChild.style.color = '#ea4f25';
+        }
     }
-    render(){
+    render(){           
         return (
             <div>
                 <img src="./src/img/banner.png" />            

@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
-import * as list1Action from './list1Action';
-import './list1.scss';
+import * as ListOrderAction from './ListOrderAction';
+import './ListOrder.scss';
 
-class List1Component extends React.Component{
+class ListOrderComponent extends React.Component{
     componentDidMount(){
         this.props.Init9();
         this.props.Init8(this.props.list)
@@ -88,7 +88,7 @@ class List1Component extends React.Component{
 }
 const mapStateToProps = function(state){
     return {
-        list:state.list1.dataset || [],
+        list:state.ListOrder.dataset || [],
     }
 }
-export default connect(mapStateToProps,list1Action)(List1Component)
+export default connect(mapStateToProps,ListOrderAction)(ListOrderComponent)

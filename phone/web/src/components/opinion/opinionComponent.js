@@ -2,8 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
 class OpinionComponent extends React.Component{
-    componentDidMount(){
-    }
     render(){
         return (
              <div className="xc_container">

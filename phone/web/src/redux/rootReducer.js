@@ -14,7 +14,7 @@ import evaluate from '../components/evaluate/evaluateReducer';
 import all from '../components/all/allReducer';
 import cawait from '../components/cawait/cawaitReducer';
 import buycar from '../components/buycar/buycarReducer';
-import list1 from '../components/list1/list1Reducer';
+import ListOrder from '../components/listOrder/ListOrderReducer';
 import shipments from '../components/shipments/shipmentsReducer';
 import receiving from '../components/receiving/receivingReducer';
 
@@ -34,7 +34,7 @@ export default combineReducers({
     evaluate,
     cawait,
     buycar,
-    list1,
+    ListOrder,
     shipments,
     receiving
 })
