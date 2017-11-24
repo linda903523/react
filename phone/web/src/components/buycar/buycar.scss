@@ -1,7 +1,10 @@
 .xc_container .bdiv-1{padding:0px 12px;height:100%;overflow-y:auto;padding-bottom:50px;position:relative}
-.xc_container .bdiv-2{padding:20px 0px;display:flex;flex-direction:row;justify-content: space-between;}
-.xc_container .bdiv-2 p{padding-left:20px;text-align:left;}
-.xc_container .bdiv-2 .buya{padding-left:10px;color:red;}
+.xc_container .bdiv-2{
+    padding:20px 0px;display:flex;flex-direction:row;justify-content: space-between;position:relative;
+    p{padding-left:20px;text-align:left;}
+    .buya{padding-left:10px;color:red;}
+    .glyphicon-menu-right{position:absolute;right:8px;top:50%;transform:translateY(-50%);}
+}
 .xc_container .bul li{overflow:hidden;position:relative;padding:5px 0px;}
 .xc_container .bul img{float:left;width:80px;height:80px;}
 .xc_container .bli p{text-align:left;}
