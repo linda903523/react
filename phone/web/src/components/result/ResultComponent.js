@@ -2,7 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as ResultAction from './ResultAction.js';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
-import './result.scss'
+import Loading from '../../components/spinner/spinner.js';
+import './result.scss';
+
 class ResultComponent extends React.Component{
     componentDidMount(){        
         window.scrollTo(0,0);
@@ -10,9 +12,7 @@ class ResultComponent extends React.Component{
         this.props.search(searchObj);
     }
     back(){
-        hashHistory.push({
-            pathname:'/search'
-        })
+        this.props.router.goBack();
     }
     render(){
         if(this.props.dataset2.length>0){
@@ -30,8 +30,13 @@ class ResultComponent extends React.Component{
                                     <img src="./src/img/db.png" className="db"/>
                                     <div>
                                     <p>
-                                        <span>{Math.ceil(item.readqty/10000)}万</span>
-                                        <span>{item.zan}</span>
+                                        <span>
+                                            <span className="glyphicon glyphicon-star-empty"></span>
+                                        {Math.ceil(item.readqty/10000)}万
+                                        </span>
+                                        <span className="zyt">
+                                        <span className="glyphicon glyphicon-thumbs-up"></span>
+                                        {item.zan}</span>
                                     </p>
                                     </div>
                                 </div>
@@ -42,8 +47,7 @@ class ResultComponent extends React.Component{
                 else if(this.props.dataset2[0].price){
                     return (<li key={'good'+idx}>
                         <Link to={{
-                            pathname:'detail',
-                            query:{id:item.id}
+                            pathname:`detail/:${item.id}`,
                         }}>
                             <img src={item.img} className="zt"/>
                             <div>
@@ -57,12 +61,13 @@ class ResultComponent extends React.Component{
                 
             })
         }else{
-            var lis =<h1>抱歉，没有找到你要的东西</h1>
+            var lis =<div className="ym_noresult"><h3>无相关信息</h3><p>没有搜索到相关信息</p></div>
         }        
         return (
-            <div>
+            <div className="ym-resultroot">
+                <Loading show={this.props.loading} load={true}></Loading>
                 <div className="result_top">
-                    <i onClick={this.back}>＜</i>
+                    <i onClick={this.back.bind(this)}>＜</i>
                     <h3>搜索结果</h3>
                 </div>
                 <div className="goodsresult">

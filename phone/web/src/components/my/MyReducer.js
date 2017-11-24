@@ -4,7 +4,7 @@ export default function MyReducer(state = {}, action){
         case 'BeforeRequest':
             reState.loading = true;
             break;
-        case 'Reqmy':
+        case 'browse2':
             reState.loading = false;
             reState.dataset = action.dataset;
             break;

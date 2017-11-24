@@ -1,4 +1,4 @@
-export default function StudentReducer(state = {}, action){
+export default function LoginReducer(state = {}, action){
     var reState = JSON.parse(JSON.stringify(state));
     switch(action.type){
         case 'BeforeRequest':

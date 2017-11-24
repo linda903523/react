@@ -3,7 +3,20 @@ import {connect} from 'react-redux';
 import * as SearchAction from './SearchAction.js';
 import Loading from '../../components/spinner/spinner.js';
 import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
-import './search.scss'
+import './search.scss';
+
+var username;
+var cookies = document.cookie;
+if(cookies.length>0){
+    cookies = cookies.split('; ');
+    cookies.forEach(function(cookie){
+        var temp = cookie.split('=');
+        if(temp[0] == 'username'){
+            username = temp[1].slice(1,-1);
+        }
+    })
+}
+
 class SearchComponent extends React.Component{
     constructor(props){
         super(props);
@@ -12,12 +25,14 @@ class SearchComponent extends React.Component{
             show:false,
             key:{},
             showhis:true
-        };
-            
+        };            
+    }
+    back(){
+        this.props.router.goBack();
     }
     clear(){
         this.setState({showhis:false})
-        this.props.clear({clear:'clear'})
+        this.props.clear({clear:'clear',username:this.props.username})
     }
     result(){
         var value = document.getElementById('word').value;
@@ -26,7 +41,7 @@ class SearchComponent extends React.Component{
             add:'add',
             title:key,
             keyword:value,
-            username:'r11'
+            username:this.props.username
         }
         this.props.add(addobj)
         hashHistory.push({
@@ -49,14 +64,12 @@ class SearchComponent extends React.Component{
     }
     componentDidMount(){
         window.scrollTo(0,0);
-        this.props.getHistory();
+        this.props.getHistory(this.props.username);
     }
     render(){
         var lis = this.props.keylist.map((item,idx)=>{
             return <li key={idx} onClick={this.getidx.bind(this,idx)}>{item}</li>
         })
-
-
         if(this.state.showhis && this.props.itemset.length>0){
             var hist = this.props.itemset.map((item,idx)=>{
                 return <li key={'ss'+idx}>
@@ -74,18 +87,22 @@ class SearchComponent extends React.Component{
                 </li>
             })
             var hst = <div className="history">
-                <div className="ht">
-                    <span className="hs">历史搜索</span>
-                    <i onClick ={this.clear.bind(this)}>清空</i>
+                    <div className="ht">
+                        <span className="hs">历史搜索</span>
+                        <i onClick ={this.clear.bind(this)}><span className="glyphicon glyphicon-trash"></span></i>
+                    </div>
+                    <ul className="hl">
+                        {   
+                            hist
+                        }
+                    </ul>
                 </div>
-                <ul className="hl">{hist}</ul>
-            </div>
         }
 
         return(
             <div className="mainsearch">
                 <div className="search_top">
-                    <Link to={'/home'} className="back">﹤</Link>
+                    <Link onClick={this.back.bind(this)} className="back">﹤</Link>
                     <div className="search">
                         <div className="keyword">
                             <span className="title" onClick={this.showkey.bind(this)}>{this.props.keylist[this.state.idx]}</span>
@@ -185,7 +202,7 @@ class SearchComponent extends React.Component{
                                 </div>
                             </li>
                             <li>
-                                <img src="./src/img/g6.png"/>
+                                <img src="./src/img/g2.png"/>
                                 <div>
                                     <p className="rx_title">钢铁侠头盔蓝牙音箱</p>
                                     <p className="rx_xiaoliang">销量:<span className="rx_qty">128</span></p>
@@ -200,11 +217,13 @@ class SearchComponent extends React.Component{
     }
 }
 
+
 const mapStateToProps = function(state){    
     return {
         keylist:['毒文','商品'],
         loading:state.search.loading,
-        itemset:state.search.dataset ||[]
+        itemset:state.search.dataset ||[],
+        username:username
     }
 }
 

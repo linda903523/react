@@ -1,9 +1,10 @@
 import baseUrl from '../../utils/baseUrl.js';
 
-export function getHistory(){
+export function getHistory(username){
     return {
         types: ['BeforeRequest2', 'Reqsea1', 'RequestError2'],
-        url: baseUrl+'history.php'
+        url: baseUrl+'history.php',
+        data:{username:username}
     }
 }
 
@@ -14,7 +15,6 @@ export function clear(clearobj){
         data:clearobj
     }
 }
-
 export function add(addobj){
     return {
         types: ['BeforeRequest2', 'Reqsea3', 'RequestError3'],

@@ -1,7 +1,7 @@
 <?php
     include 'connect.php';
-
-    $sql = 'select * from history where username = "r11"';
+    $username = isset($_GET['username']) ? $_GET['username'] : '';
+    $sql = "select * from history where username = '$username'";
 
     $result = $conn->query($sql);
     

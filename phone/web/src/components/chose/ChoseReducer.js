@@ -6,8 +6,7 @@ export default function ChoseReducer(state = {}, action){
             break;
         case 'less':
             reState.morestatus = true;
-            break;
-        
+            break;        
     }
     return reState ;
 }

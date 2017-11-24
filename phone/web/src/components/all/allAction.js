@@ -1,11 +1,9 @@
 import baseUrl from '../../utils/baseUrl.js';
 
-export function Init1(){
-    var cookies = document.cookie;
-    var username = cookies.slice(8,-1);
+export function confirm(username){
     return {
         types: ['BeforeRequestAll', 'Reqall', 'RequestError'],
-        url:baseUrl+'carlist1.php',
+        url:baseUrl+'orderlist.php',
         data:{username:username}
     }
 }

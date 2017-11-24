@@ -1,11 +1,23 @@
 import baseUrl from '../../utils/baseUrl.js';
 
-export function carlist1(){
-    var cookies = document.cookie;
-    var username = cookies.slice(8,-1);
-    return {
-        types: ['BeforeRequest', 'Reqmy', 'RequestError'],
-        url:baseUrl+'carlist1.php',
-        data:{username:username}
+var username=''
+var cookies = document.cookie;
+if(cookies.length>0){
+    cookies = cookies.split('; ');
+    cookies.forEach(function(cookie){
+        var temp = cookie.split('=');
+        if(temp[0] == 'username'){
+            username = temp[1].slice(1,-1);
+        }
+    })
+}
+
+export function browse1(){
+    return{
+        types:['BeforeRequest', 'browse2', 'detailError'],
+        url:baseUrl+'browse.php',
+        data:{
+            username:username,
+        }
     }
 }

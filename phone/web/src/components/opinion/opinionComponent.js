@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router';
+
 class OpinionComponent extends React.Component{
     render(){
         return (
@@ -15,14 +16,11 @@ class OpinionComponent extends React.Component{
                 <div className="body">
                     <textarea></textarea>
                 </div>
-            </div>
-           
+            </div>          
         )
     }
 }
 const mapStateToProps = function(state){
-    return {
-       
-    }
+    return {}
 }
 export default connect(mapStateToProps)(OpinionComponent)

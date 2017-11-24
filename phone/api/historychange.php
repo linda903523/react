@@ -5,11 +5,11 @@
 
     $keyword = isset($_REQUEST['keyword']) ? $_REQUEST['keyword'] : '';
 
-    $username = isset($_REQUEST['username']) ? $_REQUEST['username'] : 'r11';
+    $username = isset($_REQUEST['username']) ? $_REQUEST['username'] : '';
 
     if(isset($_REQUEST['clear']) ){
         
-        $sql = 'delete from history where username = "' . $username . '"';
+        $sql = "delete from history where username = '$username'";
         
         $result = $conn->query($sql);
         

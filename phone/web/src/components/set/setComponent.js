@@ -1,9 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router';
+import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 
 class SetComponent extends React.Component{
     componentDidMount(){
+    }
+    out(){
+        var date = new Date();
+        date.setDate(date.getDate()-7);
+        document.cookie = 'username=xx;expires=' + date.toString();
+        hashHistory.push({
+            pathname:'login'
+        })
+        location.reload();
     }
     render(){
         return (
@@ -47,16 +56,13 @@ class SetComponent extends React.Component{
                         </i>
                     </li>
                     </ul>
-                    <p>退出登入</p>
-                   
+                    <p onClick={this.out}>退出登录</p>                   
                 </div>
             </div>
         )
     }
 }
 const mapStateToProps = function(state){
-    return {
-       
-    }
+    return {}
 }
 export default connect(mapStateToProps)(SetComponent)

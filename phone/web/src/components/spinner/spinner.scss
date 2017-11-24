@@ -56,3 +56,44 @@
     80%{-webkit-transform:scale(0);transform:scale(0)}
     40%{-webkit-transform:scale(1);transform:scale(1)}
 }
+
+.ym-spinner{
+    position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:40%;height:80px;background:white;
+    z-index:1000;border-radius:10px;padding-top:10px;
+    .ym-loading{
+        text-align:center;color:yellow;
+        div{
+            animation:movero 0.5s infinite reverse;
+            -webkit-animation: movero 0.5s infinite reverse;
+            color:yellow;
+        }
+    }
+    p{
+        font-size:14px;text-align:center;padding-top:10px;color:#171717;font-weight:bold;
+    }
+    
+}
+
+// @keyframes move{
+//     0% {transform:rotate(0deg)}
+//     50% {transform:rotate(180deg)}
+//     100% {transform:rotate(360deg)}
+// }
+
+@keyframes movero
+{
+    0%   {transform:rotate(0deg);}
+
+    50% {transform:rotate(180deg);}
+
+    100% {transform:rotate(360deg);}
+}
+
+@-webkit-keyframes movero
+{
+    0%   {transform:rotate(0deg);}
+
+    50% {transform:rotate(180deg);}
+
+    100% {transform:rotate(360deg);}
+}

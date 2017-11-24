@@ -1,6 +1,5 @@
 export default function LoadmoreReducer(state = {}, action){
     var reState = JSON.parse(JSON.stringify(state));
-    // console.log(action)
     switch(action.type){
         case 'BeforeRequest':
             reState.loading = true;
@@ -19,8 +18,7 @@ export default function LoadmoreReducer(state = {}, action){
                  reState.pageNo=2
             }else{
                 reState.pageNo +=1;
-            }
-            
+            }           
             break;
         default:
             reState.loading = false;

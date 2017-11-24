@@ -5,6 +5,7 @@ export default function ListOrderReducer(state = {}, action){
             reState.loading = true;
             break;
         case 'Reqlist1':
+        case 'Reqlist2':
             reState.dataset = action.dataset;
             break;
         default:

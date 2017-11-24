@@ -1,20 +1,31 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router';
+import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import * as DetailAction from './DetailAction.js';
 import  './detail.scss';
+import Loading from '../../components/spinner/spinner.js';
 
 class DetailComponent extends React.Component{
     componentDidMount(){
         this.props.Init(this.props.params);
+        this.props.liu(this.props.params);
+    }
+    back(){
+        this.props.router.goBack();
+    }
+    login(){
+        hashHistory.push({
+            pathname:'login'
+        })
     }
     render(){
         return (
             <div className="fl_detail">
                 <main>
+                    <Loading show={this.props.loading} load={true}></Loading>
                     <header>
                         <div className="icon">
-                            <Link to="shopping"><i className="glyphicon glyphicon-menu-left"></i></Link>
+                            <Link onClick={this.back.bind(this)}><i className="glyphicon glyphicon-menu-left"></i></Link>
                             <i className="glyphicon glyphicon-shopping-cart"></i>
                             <i className="glyphicon glyphicon-option-horizontal"></i>
                         </div>
@@ -41,6 +52,7 @@ class DetailComponent extends React.Component{
                         </div>
                     </header>
                     <div className="fl_details">
+
                         <div className="link" onClick={this.props.aChange.bind(this)}>
                             <a href="#detail">商品亮点</a>
                             <a href="#pramas">商品参数</a>
@@ -134,14 +146,14 @@ class DetailComponent extends React.Component{
                                 (this.props.dataset || []).map((obj,idx)=>{
                                     return (
                                         <li key={'del2'+idx}>
-                                            <img src={obj.img} />
+                                            <img src={obj.img} className="_imgsrc"/>
                                             <div>
-                                                <p>{obj.name}</p>
-                                                <strong>{obj.price}元</strong>
+                                                <p className="_goodsname">{obj.name}</p>
+                                                <strong className="_goodsprice">{obj.price}</strong>元
                                             </div>
-                                            <p onClick={this.props.choseColor.bind(this)}>颜色<em>{obj.color.substr(0,3)}</em><em>{obj.color.substr(4)}</em>
+                                            <p onClick={this.props.choseColor.bind(this)} className="goc">颜色<em>{obj.color.substr(0,3)}</em><em>{obj.color.substr(4)}</em>
                                             </p>
-                                            <p onClick={this.props.choseSize.bind(this)}>尺寸<em>{obj.size.substr(0,2)}</em><em>{obj.size.substr(3,2)}</em><em>{obj.size.substr(6)}</em></p>
+                                            <p onClick={this.props.choseSize.bind(this)} className="goz">尺寸<em>{obj.size.substr(0,2)}</em><em>{obj.size.substr(3,2)}</em><em>{obj.size.substr(6)}</em></p>
                                             <p>数量<span>
                                                 <i className="glyphicon glyphicon-minus" onClick={this.props.jian.bind(this,idx)}></i>
                                                 <span className="number">1</span>
@@ -156,6 +168,19 @@ class DetailComponent extends React.Component{
                         <i className="glyphicon glyphicon-remove-circle" onClick={this.props.popNone.bind(this)}></i>
                     </div>
                 </div>
+                <div className="firstlogin">
+                    <div className="cover1"></div>
+                    <div className="lf">
+                        <div className="lf_top">
+                            <p className="lf_title">请先登录</p>
+                            <ul>
+                                <li onClick={this.login}>使用官方帐号登录</li>
+                                <li>使用手机号登录</li>
+                            </ul>
+                        </div>
+                        <div className="cancel" onClick={this.props.cancel}><span>取消</span></div>
+                    </div>
+                </div>
                 <p className="fl_successAdd">成功添加到购物车</p>
             </div>
         )
@@ -164,7 +189,8 @@ class DetailComponent extends React.Component{
 
 var mapStateToProps = function(state){
     return {
-        dataset:state.detail.dataset || []
+        dataset:state.detail.dataset || [],
+        loading: state.detail.loading || false
     }
 }
 

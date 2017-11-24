@@ -2,7 +2,16 @@ import baseUrl from '../../utils/baseUrl.js';
 
 export function Init9(){
     var cookies = document.cookie;
-    var username = cookies.slice(8,-1);
+    var username;
+    if(cookies.length>0){
+        cookies = cookies.split('; ');
+        cookies.forEach(function(cookie){
+            var temp = cookie.split('=');
+            if(temp[0] == 'username'){
+                username = temp[1].slice(1,-1);
+            }
+        })
+    }
     return {
         types: ['BeforeRequest', 'Reqlist1', 'RequestError'],
          url: baseUrl+'carlistOrder.php',
@@ -19,21 +28,14 @@ export function Init8(a){
         type:'jiesuan'
     }
 }
-export function dan(list){
-    var goodsid=[];
-    var cookies = document.cookie;
-    var username = cookies.slice(8,-1);
-    for(var i=0;i<list.length;i++){
-        goodsid.push(list[i].id);
+export function xiadan(detail,totalprice){
+    for (var i=0;i<detail.length;i++){
+        detail[i].totalprice = totalprice['totalprice'];
     }
+    detail = JSON.stringify(detail)
     return {
         types: ['BeforeRequest', 'Reqlist2', 'RequestError'],
-         url: baseUrl+'status.php',
-         data:{
-            list:JSON.stringify({
-                username:username,
-                id:goodsid 
-            })
-        }
+        url: baseUrl+'confirmorder.php',
+        data:{order:detail}
     }
 }

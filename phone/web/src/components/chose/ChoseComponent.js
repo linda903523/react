@@ -8,12 +8,11 @@ import './chose.scss';
 class ChoseComponent extends React.Component{
     componentDidUpdate(){
         if(this.props.morestatus){   
-            $('.chose').animate({height:'260px'},200);
+            $('.chose').animate({height:$('.chose li').outerHeight(true)*4},200);
             $('.chose').children('li').eq(4).html(`<img src="./src/img/ccc5_1.jpg"/>`)
         }else{
-            $('.chose').animate({height:'59px'},200);
-            $('.chose').children('li').eq(4).html(`<img src="./src/img/ccc5.png"/>`)
-            
+            $('.chose').animate({height:$('.chose li').outerHeight(true)},200);
+            $('.chose').children('li').eq(4).html(`<img src="./src/img/ccc5.png"/>`)           
         }
     }
     aa(idx){
@@ -25,25 +24,24 @@ class ChoseComponent extends React.Component{
     }
     render(){
         return (
-                <div>
-                    <ul className='chose'>
-                        {
-                            this.props.dataset.map((item,idx)=>{
-                                return (
-                                    <li key={idx} onClick={this.aa.bind(this,idx)}>
-                                        <Link to={item.tourl}>
-                                            <img src={item.imgurl} />
-                                        </Link>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
-            )
+            <div>
+                <ul className='chose'>
+                    {
+                        this.props.dataset.map((item,idx)=>{
+                            return (
+                                <li key={idx} onClick={this.aa.bind(this,idx)}>
+                                    <Link to={item.tourl}>
+                                        <img src={item.imgurl} />
+                                    </Link>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
+            </div>
+        )
     }
 }
-
 
 const mapStateToProps = function(state){
     return {
@@ -120,6 +118,5 @@ const mapStateToProps = function(state){
         morestatus:state.chose.morestatus || false
     }
 }
-
 
 export default connect(mapStateToProps, ChoseAction)(ChoseComponent);

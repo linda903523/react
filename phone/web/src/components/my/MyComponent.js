@@ -2,12 +2,30 @@ import React from 'react';
 import {connect} from 'react-redux';
 import SpinnerComponent from '../spinner/spinner';
 import * as MyAction from './MyAction';
-import {Link} from 'react-router';
+import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import './my.scss';
+import CheComponent from '../che/cheComponent';
+
+var username;
+var cookies = document.cookie;
+if(cookies.length>0){
+    cookies = cookies.split('; ');
+    cookies.forEach(function(cookie){
+        var temp = cookie.split('=');
+        if(temp[0] == 'username'){
+            username = temp[1].slice(1,-1);
+        }
+    })
+}
 
 class MyComponent extends React.Component{
     componentDidMount(){
-        this.props.carlist1();
+        this.props.browse1();
+        if(username==undefined){
+            hashHistory.push({
+                pathname:'login'
+            })
+        }
     }
     render(){
         return (
@@ -23,7 +41,7 @@ class MyComponent extends React.Component{
                             <img src="./src/img/l3.png" className="cimg-1"/>
                             <div>
                                 <span>{this.props.username}</span>
-                                <span>微信</span>
+                                <span>官方帐号</span>
                                 <span>广东/佛山</span>
                             </div>
                         </div>
@@ -39,7 +57,7 @@ class MyComponent extends React.Component{
                             <li><span>0</span><span>毒文</span></li>
                             <li><span>0</span><span>评论</span></li>
                             <li><span>0</span><span>收藏/点赞</span></li>
-                            <li><span>0</span><span>浏览历史</span></li>
+                            <li><Link to ="browse"><span>{this.props.my.length}</span><span>浏览历史</span></Link></li>
                         </ul>
                         <Link to="du">
                         <ul className="cul-3">
@@ -52,23 +70,7 @@ class MyComponent extends React.Component{
                     <div className="tiao"></div>
                     <div className="cdiv-4">
                         <p><i className="glyphicon glyphicon-plus-sign"></i>我中的毒</p>
-                        <div className="cdiv-5">
-                            <ul>
-                                {
-                                    (this.props.carlistMy ? this.props.carlistMy : []).map(function(obj,idx){
-                                        return (
-                                            <li key={'carlistMy'+idx}>
-                                                <img src={obj.img} />
-                                                <div>
-                                                    <p>{obj.name}</p>
-                                                    <strong>{obj.price}元</strong>
-                                                </div>
-                                            </li>
-                                        )
-                                    })
-                                }
-                            </ul>
-                        </div>
+                        <CheComponent/>
                     </div>
                     <div className="tiao"></div>
                     <Link to="opinion">
@@ -95,7 +97,7 @@ class MyComponent extends React.Component{
                     <ul>
                         <Link to="home"><i className="glyphicon glyphicon-hand-right"></i>推荐</Link>
                         <Link to="shopping"><i className="glyphicon glyphicon-gift"></i>商店</Link>
-                        <Link to="buycar"><i className="glyphicon glyphicon-shopping-cart"></i>购物车</Link>
+                         <Link to="buycar"><i className="glyphicon glyphicon-shopping-cart"></i>购物车</Link>
                         <Link to="my"><i className="glyphicon glyphicon-user"></i>我的</Link>
                     </ul>
                 </div>
@@ -106,8 +108,8 @@ class MyComponent extends React.Component{
 const mapStateToProps = function(state){
     return {
         loading: state.my.loading,
-        carlistMy:state.my.dataset || [],
-        username:document.cookie.slice(8,-1)
+        my: state.my.dataset || [],
+        username:username
     }
 }
-export default connect(mapStateToProps, MyAction)(MyComponent)             
+export default connect(mapStateToProps, MyAction)(MyComponent)

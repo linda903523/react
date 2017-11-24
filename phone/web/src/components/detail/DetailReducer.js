@@ -5,12 +5,15 @@ export default function DetailReducer(state = {},action){
             reState.loading = true;
             break;
         case 'Listed':
-        case 'detailed':
             reState.loading = false;
             reState.dataset = action.dataset;
             break;
-        default:
+        case 'detailed':
             reState.loading = false;
+            break;
+        default:
+            // reState.loading = false;
+            // break;
     }
     return reState;
 }

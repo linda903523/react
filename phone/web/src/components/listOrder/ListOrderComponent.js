@@ -6,14 +6,40 @@ import './ListOrder.scss';
 
 class ListOrderComponent extends React.Component{
     componentDidMount(){
-        this.props.Init9();
-        this.props.Init8(this.props.list)
+        // this.props.Init9();
+        // this.props.Init8(this.props.list)
+    }
+    back(){
+        this.props.router.goBack();
     }
     render(){
+        if(this.props.location.query.totalprice>399){
+            var tp=<ul className="listul-1">
+                        <li>
+                            <i className="glyphicon glyphicon-ok-sign"></i>
+                            <span>元店铺满399.0包邮</span>
+                        </li>
+                        <li><span>商品金额：</span><span> ￥{this.props.location.query.totalprice} </span></li>
+                        <li><span>毒币抵扣：</span><span>- ￥ 0.00</span></li>
+                        <li><span>运费：</span><span>+ ￥ 0.00</span></li>
+                        <li><span>价格合计：</span><span>￥{this.props.location.query.totalprice}</span></li>
+                    </ul>
+        }else{
+            var tp=<ul className="listul-1">
+                        <li>
+                            <i className="glyphicon glyphicon-ok-sign"></i>
+                            <span>元店铺满399.0包邮</span>
+                        </li>
+                        <li><span>商品金额：</span><span> ￥{this.props.location.query.totalprice} </span></li>
+                        <li><span>毒币抵扣：</span><span>- ￥ 0.00</span></li>
+                        <li><span>运费：</span><span>+ ￥ 18.00</span></li>
+                        <li><span>价格合计：</span><span className="total_price">￥{(Number(this.props.location.query.totalprice)+18.00).toFixed(2)}</span></li>
+                    </ul>
+        }
         return (
              <div className="xc_container">
                 <header className="Lheader">
-                    <Link to="my">
+                    <Link onClick={this.back.bind(this)}>
                     <i className="glyphicon glyphicon-menu-left i12">
                     </i></Link>
                     <div className="Odiv-1"><p>确认订单</p></div>
@@ -33,17 +59,12 @@ class ListOrderComponent extends React.Component{
                         </ul>
                         <ul className="listul">
                             {
-                               (this.props.list ? this.props.list : []).map((item,index)=>{
+                               (this.props.location.state ? this.props.location.state : []).map((item,index)=>{
                                     return (
                                         <li key={'li'+index} >
-                                            <Link to={{
-                                                    pathname:'detail',
-                                                    query:{
-                                                        id:item.id
-                                                    }
-                                                }}>
-                                                <img src={item.img} className="imglist-2"/>
-                                            </Link>
+
+                                            <img src={item.imgurl} className="imglist-2"/>
+                                           
                                             <div className="lidiv-0">
                                                 <Link to={{
                                                     pathname:'detail',
@@ -53,7 +74,13 @@ class ListOrderComponent extends React.Component{
                                                 }}>
                                                     <p className="lip-2">{item.name}</p>
                                                 </Link>    
-                                                <p className="lip-1">x{item.number}</p>
+                                                <div className="lip-1">
+                                                <p className="gt">
+                                                    颜色：<span className="gc">{item.color}</span>
+                                                    尺寸：<span className="gz">{item.size}</span>
+                                                </p>
+                                                <p>x<span className="gq">{item.number}</span></p>
+                                                </div>
                                             </div>
                                         </li>
                                     )
@@ -63,23 +90,16 @@ class ListOrderComponent extends React.Component{
                     </div>
                     <div className="liul-2">
                         <p>配送方式 :</p>
-                        <ul className="listul-1">
-                            <li>
-                                <i className="glyphicon glyphicon-ok-sign"></i>
-                                <span>元店铺满399.0</span><span>包邮</span>
-                            </li>
-                            <li><span>商品金额：</span><span> ￥ </span></li>
-                            <li><span>毒币抵扣：</span><span>- ￥ 0.00</span></li>
-                            <li><span>运费：</span><span>+ ￥ 0.00</span></li>
-                            <li><span>价格合计：</span><span>￥</span></li>
-                        </ul>
+                        {tp}
                         <input type="text" />                       
                     </div>
                 </div>
                 <footer >
                     <ul className="listfooter">
-                        <li>总价：<span className="zongjia"></span></li>
-                        <Link to="shipments"><li onClick={this.props.dan.bind(this,this.props.list)}><button>确认下单</button></li></Link>
+                        <li>总价：<span className="zongjia">{
+                            this.props.location.query.totalprice>399?this.props.location.query.totalprice:(Number(this.props.location.query.totalprice)+18.00).toFixed(2)
+                        }</span></li>
+                        <Link to="all"><li onClick={this.props.xiadan.bind(this,this.props.location.state,this.props.location.query)}><button>确认下单</button></li></Link>
                     </ul>
                 </footer>
             </div>

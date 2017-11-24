@@ -16,3 +16,12 @@
 .xc_container .liul-2 input{width:80%;margin-left:10%;height:50px;border:1px solid #555;margin:10px 0px 30px 10%;}
 .xc_container .listfooter{display:flex;flex-direction:row;justify-content:flex-end;color:#fff;line-height:30px;padding-top:10px;font-size:12px;}
 .xc_container .listfooter button{list-style-type:none;background:none;border:none;color:#fff;width:80px;background-color:red;margin: 0px 20px;}
+.lip-1{
+    display:flex;justify-content:space-between;
+    .gt{
+        font-size:12px;color:#bbb;
+    }
+}
+.total_price{
+    color:orange;
+}

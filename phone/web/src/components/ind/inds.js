@@ -31,7 +31,6 @@ class IndComponent extends React.Component{
      }
     changeInd(){}
     changeBtnInd(){
-        console.log(12);
         hashHistory.push({pathname:'/'});
         var date = new Date();
         date.setDate(date.getDate()-7);//7天后的时间
@@ -40,7 +39,6 @@ class IndComponent extends React.Component{
     render(){
         return (
             <div>
-
                 <h1 onClick={this.changeInd} className="Hee">主路由22222</h1>
                 <h3>
                     <span className="he_span">请先登录</span>
