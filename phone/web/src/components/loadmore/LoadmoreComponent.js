@@ -23,6 +23,7 @@ class LoadmoreComponent extends React.Component{
         return (
             <div>
                 <Loading show={this.props.loading} loadmore={true}></Loading>
+
                 <ul className="maincontent">
                     {
                         this.props.dataset1.map((item,idx)=>{

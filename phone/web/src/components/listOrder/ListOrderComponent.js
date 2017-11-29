@@ -8,7 +8,6 @@ class ListOrderComponent extends React.Component{
     componentDidMount(){
         // this.props.Init9();
         // this.props.Init8(this.props.list)
-        console.log(this.props)
     }
     back(){
         this.props.router.goBack();

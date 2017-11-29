@@ -10,7 +10,11 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
+<<<<<<< HEAD
 Date: 2017-11-28 19:18:10
+=======
+Date: 2017-11-17 16:35:29
+>>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -63,6 +67,7 @@ INSERT INTO `article` VALUES ('0000000027', './src/img/jj3.png', '脱颖而出�
 INSERT INTO `article` VALUES ('0000000028', './src/img/jj4.png', '皇室贵族的身份象征，也能成为笔尖上的精致点缀', '- 绝对的身份象征!实力的体现!融资必备法宝!一经拥有别无它求! 私人财卡(黑钻)推荐费:10000元; 靓号钻石卡推荐费:5000元', '5232122', '4245', '/article');
 
 -- ----------------------------
+<<<<<<< HEAD
 -- Table structure for browse
 -- ----------------------------
 DROP TABLE IF EXISTS `browse`;
@@ -86,6 +91,8 @@ INSERT INTO `browse` VALUES ('0000000046', '12', '2017-11-28 16:12:26', '');
 INSERT INTO `browse` VALUES ('0000000047', '1', '2017-11-28 16:12:28', '');
 
 -- ----------------------------
+=======
+>>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b
 -- Table structure for carlist
 -- ----------------------------
 DROP TABLE IF EXISTS `carlist`;
@@ -98,12 +105,30 @@ CREATE TABLE `carlist` (
   `size` varchar(255) DEFAULT NULL,
   `addTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
 ) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+>>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b
 
 -- ----------------------------
 -- Records of carlist
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `carlist` VALUES ('0000000062', '11', '付玲', '3', '抢灰色', '27', '2017-11-24 19:55:05');
+=======
+INSERT INTO `carlist` VALUES ('0000000050', '2', '付玲', '9', '咖啡色', '27', '2017-11-17 16:23:49');
+INSERT INTO `carlist` VALUES ('0000000051', '4', '付玲', '8', '抢灰色', '27', '2017-11-17 16:23:47');
+INSERT INTO `carlist` VALUES ('0000000052', '24', '付玲', '2', '抢灰色', '27', '2017-11-17 15:43:59');
+INSERT INTO `carlist` VALUES ('0000000053', '6', '张三', '1', '抢灰色', '26', '2017-11-17 15:59:46');
+INSERT INTO `carlist` VALUES ('0000000054', '6', '张三', '2', '咖啡色', '27', '2017-11-17 16:01:23');
+INSERT INTO `carlist` VALUES ('0000000038', '13', '付玲', '8', '抢灰色', '27', '2017-11-17 10:30:20');
+INSERT INTO `carlist` VALUES ('0000000045', '13', '付玲', '8', '咖啡色', '28', '2017-11-17 10:16:08');
+INSERT INTO `carlist` VALUES ('0000000046', '13', '付玲', '5', '咖啡色', '26', '2017-11-17 10:11:51');
+INSERT INTO `carlist` VALUES ('0000000047', '13', '付玲', '9', '咖啡色', '27', '2017-11-17 10:14:57');
+INSERT INTO `carlist` VALUES ('0000000048', '2', '付玲', '9', '咖啡色', '28', '2017-11-17 16:23:49');
+INSERT INTO `carlist` VALUES ('0000000049', '2', '付玲', '9', '抢灰色', '27', '2017-11-17 16:23:49');
+>>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b
 
 -- ----------------------------
 -- Table structure for goods
@@ -247,13 +272,20 @@ CREATE TABLE `history` (
   `title` varchar(255) DEFAULT NULL,
   `keyword` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
 ) ENGINE=MyISAM AUTO_INCREMENT=174 DEFAULT CHARSET=utf8;
+=======
+) ENGINE=MyISAM AUTO_INCREMENT=170 DEFAULT CHARSET=utf8;
+>>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b
 
 -- ----------------------------
 -- Records of history
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `history` VALUES ('0000000173', 'r11', '毒文', '4');
 INSERT INTO `history` VALUES ('0000000172', 'r11', '商品', '2');
+=======
+>>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b
 
 -- ----------------------------
 -- Table structure for list
@@ -267,6 +299,7 @@ CREATE TABLE `list` (
   `number` int(11) DEFAULT NULL,
   `status` varchar(255) DEFAULT '1',
   `addTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+<<<<<<< HEAD
   `color` varchar(255) DEFAULT NULL,
   `size` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -274,12 +307,24 @@ CREATE TABLE `list` (
   `imgurl` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
+=======
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+>>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b
 
 -- ----------------------------
 -- Records of list
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `list` VALUES ('0000000077', '788244079', '3', '付玲', '1', '1', '2017-11-24 19:24:45', '抢灰色', ' 27', '智能控温充电暖手宝', '298.00', './src/img/j3.png');
 INSERT INTO `list` VALUES ('0000000079', '22665079', '3', '付玲', '1', '1', '2017-11-24 19:31:14', '抢灰色', ' 27', '智能控温充电暖手宝', '298.00', './src/img/j3.png');
+=======
+INSERT INTO `list` VALUES ('0000000024', '639787', '2', '付玲', '9', '4', '2017-11-17 16:26:08');
+INSERT INTO `list` VALUES ('0000000025', '910456', '4', '付玲', '8', '4', '2017-11-17 16:26:08');
+INSERT INTO `list` VALUES ('0000000026', '40590', '13', '付玲', '2', '4', '2017-11-17 16:26:08');
+INSERT INTO `list` VALUES ('0000000027', '524978', '24', '付玲', '8', '4', '2017-11-17 16:26:08');
+INSERT INTO `list` VALUES ('0000000028', '392097', '6', '张三', '1', '3', '2017-11-17 16:04:24');
+>>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b
 
 -- ----------------------------
 -- Table structure for register
@@ -300,3 +345,7 @@ CREATE TABLE `register` (
 INSERT INTO `register` VALUES ('0000000008', '张三', 'f123456', '0c78ac42a93368a7303bf8d8808d19ec', '2017-11-17 15:53:26');
 INSERT INTO `register` VALUES ('0000000002', '徐翠', 'x123456', '', '2017-11-16 20:05:27');
 INSERT INTO `register` VALUES ('0000000007', '付玲', 'f123456', 'd721f6cdef64480da5c3bea61bdc07d1', '2017-11-17 11:26:21');
+<<<<<<< HEAD
+=======
+SET FOREIGN_KEY_CHECKS=1;
+>>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b

@@ -19,7 +19,7 @@ import shipments from '../components/shipments/shipmentsReducer';
 import receiving from '../components/receiving/receivingReducer';
 import che from '../components/che/cheReducer';
 import br from '../components/browse/browseReducer';
- 
+
 export default combineReducers({
     home,
     chose,

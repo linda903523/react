@@ -102,5 +102,4 @@ const mapStateToProps = function(state){
         receiving: state.receiving.dataset || []
     }
 }
-
 export default connect(mapStateToProps,receivingActive)(ReceivingComponent)

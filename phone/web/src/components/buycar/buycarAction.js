@@ -45,8 +45,6 @@ export function red(e){
         type:'red'
     }
 }
-
-
 export function bianji(e){
     if($(e.target).text()=='完成'){
         $('.shan').removeClass('block');

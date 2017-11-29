@@ -45,7 +45,6 @@ class SearchComponent extends React.Component{
         this.setState({
             showPop:true
         })
-        
     }
     result(){
         var value = document.getElementById('word').value;
@@ -81,7 +80,7 @@ class SearchComponent extends React.Component{
     }
     render(){
         var lis = this.props.keylist.map((item,idx)=>{
-                return <li key={idx} onClick={this.getidx.bind(this,idx)}>{item}</li>
+            return <li key={idx} onClick={this.getidx.bind(this,idx)}>{item}</li>
         })
         if(this.state.showhis && this.props.itemset.length>0){
             var hist = this.props.itemset.map((item,idx)=>{

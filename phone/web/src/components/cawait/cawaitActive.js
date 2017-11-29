@@ -33,6 +33,5 @@ export function status1(number){
             ordernumber:ordernumber,
             status:status
         }
-
     }
 }
