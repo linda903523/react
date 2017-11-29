@@ -1,0 +1,58 @@
+.fl_contain{
+    display:flex;flex-direction:column;width:100%;height:100%;font-size:12px;
+    header{
+        height:50px;background: #1f1f1f;color:#bebebe;display:flex;justify-content:space-around;align-items:center;
+        h2{font-weight:400;font-size:12px;}
+    }
+    main{
+        flex:1;width:100%;overflow:hidden;background: #f0efef;display:flex;flex-direction:column;
+        nav{
+            width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;
+            ul{display:flex;justify-content:space-around;width:200%;overflow:hidden;background:#171717;height:50px;align-items:center;}
+            li{
+                flex:1;text-align:center;
+                &:first-child a{color:#ea4f25;}
+            }
+            a{color:#bebebe;text-decoration:none;}
+        }
+        img{width:100%;}
+    }
+    .fl_list{
+        flex:1;overflow:hidden;overflow-y:auto;width:100%;-webkit-overflow-scrolling:touch;
+        h2{font-size:17px;font-weight:400;line-height:35px;margin-left:10px;}
+        .section1{
+            display:flex;flex-direction:column; margin:10px 0;          
+            aside{overflow-x:auto;background: #fff;margin-bottom:10px;height:150px;}
+            ul{display:flex;justify-content:space-around;overflow:hidden;align-items:center;}
+            li{
+                flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 5px;
+                img{border-radius:10px;}
+            }
+            .fl_img{background: #fff;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:3%;
+                img{margin-bottom:10px;}
+            }
+            .fl_bot{
+                height:70px;display:flex;justify-content:space-around;
+                img{width:49%;margin: 0;}
+            }   
+        }
+        .section2{
+            background:#fff;height:155px;display:flex;justify-content:space-around;
+            p{color:#ea4f25;margin-left:10px;}
+            .part1{display:flex;justify-content:space-around;border-right:1px solid #ccc;}
+        }
+        .section3{
+            background:#fff;
+            li{width:46.8%;float:left;border:1px solid #ccc;padding:5px;margin:5px;}
+            p{line-height: 22px;}
+        }
+    }
+    .fl_bottom{
+        width:100%;height:50px;opacity:0.8;background:#151515;
+        ul{display:flex;justify-content:space-between;height:100%;}
+        a{
+            flex:1;position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#cacaca;
+            &:nth-child(2){color:#eac502;}
+        }
+    }
+}

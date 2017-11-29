@@ -1,0 +1,21 @@
+web端
+ 1.在wampserver64 配置好php的端口和访问路径,即项目的api地址，如'C:\Users\Administrator\Desktop\eb\react'；
+ 2.进入项目的路径'src/utils/baseUrl'修改api的bathURL 如'http://10.3.137.199:80/api/';
+ 3.导入目录下的数据库mysql.sql;
+ 4.修改package.json 里的“script”里的'start'下host的ip地址，为您的ip地址；
+ 5.项目根目录里打开命令提示符，即shilf+鼠标右键，输入npm install进行依赖安装；
+ 6.安装成功后，打开命令提示符，输入npm start，开启项目；
+ 7.浏览器输入 ip地址:3001/#/login 进入登录页面，如‘10.3.137.199:3001/#/login’；
+	
+PC端
+
+1. 修改以下 IP ：
+ 	./ api/ connect.php 中的配置参数
+	./ pc/ package.json 第9行 IP
+	./ pc/ src/ components/ login/ LoginComponent.js 第47行 IP
+	./ pc/ src/ components/ home/ HomeComponent.js 第 56、61、69 行
+2. 运行项目：
+	运行服务器 wampserver
+	打开 ./ pc/ 打开命令行，输入npm start
+	打开浏览器，输入“IP:3005/#/login”
+	（用户名 qwer1234   密码 123）

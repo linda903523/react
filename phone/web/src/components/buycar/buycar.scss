@@ -1,0 +1,44 @@
+.xc_container .bdiv-1{padding:0px 12px;height:100%;overflow-y:auto;padding-bottom:50px;position:relative}
+.xc_container .bdiv-2{padding:20px 0px;display:flex;flex-direction:row;justify-content: space-between;}
+// .xc_container .bdiv-2 i{font-size:15px;color:#000;}
+.xc_container .bdiv-2 p{padding-left:20px;text-align:left;}
+.xc_container .bdiv-2 .buya{padding-left:10px;color:red;}
+.xc_container .bul li{overflow:hidden;position:relative;padding:5px 0px;}
+.xc_container .bul img{float:left;width:80px;height:80px;}
+.xc_container .bli p{text-align:left;}
+.xc_container .goodstype{color:#ccc;padding-top:5px;font-size:10px;}
+.xc_container .buyspan2{display:flex;flex-direction:row;justify-content: space-between;padding:8px 8px 8px 0px;}
+.xc_container .buyspan3{border:1px solid #000;}
+.xc_container .buyspan3 span{display:block;float:left;width:20px;height:20px;text-align:center;border-right:1px solid #000;}
+.xc_container .buyspan3 .buyspan4{border-right:none;}
+.xc_container .buyspan5{color:red;}
+.xc_container .buydiv-1{border-bottom:1px solid #DDD;overflow:hidden;}
+.xc_container .buyfooter .yuan2{border:2px solid #fff;margin:18px 3px 0px 10px; }
+.xc_container .buyfooter{line-height:50px;position:fixed;bottom:0;left:0}
+.xc_container .buyfooter ul{display:flex;flex-direction:row;justify-content: space-between;color:#fff;height:100%;}
+.xc_container .buyfooter button{background:none;color:#fff;border:none;width:100px;font-size:15px;background-color:red;}
+.xc_container .bul input{float:left;}
+.xc_container .input-buy{float:left;margin-top:3px;}
+.xc_container .bul .buyinput{margin-top:20px;}
+.xc_container .buyfooter input{margin:10px 10px 0px 10px;}
+.xc_container .nogoods{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    .ng{
+        font-weight:bold;font-size:16px;
+    }
+}
+.xc_container .nochose{
+    position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:white;height:16%;width:40%;border-radius:10px;display:none;border-radius:10px;border:1px solid #222;padding-top:10px;
+    .closenochose{
+        width:30px;margin:0 auto;border-radius:50%;background:#222;line-height:30px;text-align:center;
+        span{color:yellow;}
+    }
+    p{padding-top:10px;color:black;font-weight:bold;}
+}
+.xc_container .Oheader{display:flex;flex-direction:row;justify-content: space-between;padding:0px 15px;}
+.xc_container .Oheader button{background:none;border:none;height:20px;margin-top:12px;color:#fff;background-color:#000;outline:none;}
+.xc_container .shan{float:left;margin:20px 10px 0px 0px;color:red;display:none;}
+.xc_container .none{display:none;}
+.xc_container .block{display:block;}
+.xc_container .bdiv-shan p{width:300px;}
+.xc_container .bdiv-shan .shan{color:red;float:left;margin-top:0px;font-size:13px;}

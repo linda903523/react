@@ -1,0 +1,99 @@
+.dk-spinner-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: 0.1;
+    z-index: 20000;
+}
+
+.dk-spinner-three-bounce.dk-spinner {
+    position: fixed;
+    bottom:55px;
+    left: 50%;
+    font-weight:bold;
+    transform:translate(-50%,0);
+    background-color: none!important;
+    z-index: 20000;
+    margin: 0 auto;
+    width: 70px;
+    text-align: center;    
+}
+
+.dk-spinner-three-bounce div {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: dk-threeBounceDelay 1.4s infinite ease-in-out;
+    animation: dk-threeBounceDelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.dk-spinner-three-bounce .dk-bounce1 {
+    -webkit-animation-delay: -.32s;
+    animation-delay: -.32s;
+}
+
+.dk-spinner-three-bounce .dk-bounce2 {
+    -webkit-animation-delay: -.16s;
+    animation-delay: -.16s;
+}
+
+@-webkit-keyframes dk-threeBounceDelay{
+    0%,
+    100%,
+    80%{-webkit-transform:scale(0); transform:scale(0)}
+    40%{-webkit-transform:scale(1);transform:scale(1)}
+}
+@keyframes dk-threeBounceDelay{
+    0%,
+    100%,
+    80%{-webkit-transform:scale(0);transform:scale(0)}
+    40%{-webkit-transform:scale(1);transform:scale(1)}
+}
+
+.ym-spinner{
+    position: fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:40%;height:80px;background:white;
+    z-index:1000;border-radius:10px;padding-top:10px;
+    .ym-loading{
+        text-align:center;color:yellow;
+        div{
+            animation:movero 0.5s infinite reverse;
+            -webkit-animation: movero 0.5s infinite reverse;
+            color:yellow;
+        }
+    }
+    p{
+        font-size:14px;text-align:center;padding-top:10px;color:#171717;font-weight:bold;
+    }
+    
+}
+
+// @keyframes move{
+//     0% {transform:rotate(0deg)}
+//     50% {transform:rotate(180deg)}
+//     100% {transform:rotate(360deg)}
+// }
+
+@keyframes movero
+{
+    0%   {transform:rotate(0deg);}
+
+    50% {transform:rotate(180deg);}
+
+    100% {transform:rotate(360deg);}
+}
+
+@-webkit-keyframes movero
+{
+    0%   {transform:rotate(0deg);}
+
+    50% {transform:rotate(180deg);}
+
+    100% {transform:rotate(360deg);}
+}

@@ -1,0 +1,42 @@
+.ym-cover{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: 0.2;
+    z-index: 20000;
+}
+.ym-popwindow{
+    background:white;
+    border:1px solid #ccc;
+    border-radius:10px;
+    z-index:20001;
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:70%;
+    height:100px;
+    display:flex;
+    flex-direction:column;
+    .pop_title{
+        padding:10px 0;
+        text-align:center;
+        p{
+            &:nth-child(1){
+                font-size:14px;font-weight:bold;
+            }
+        }
+    }
+    .pop_confirm{
+        display:flex;border-top:1px solid #ccc;flex:1;
+        li{
+            width:50%;text-align:center;color:blue;display:flex;flex-direction:column;justify-content:center;
+            &:first-child{
+                border-right:1px solid #ccc;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.xc_container .Lheader{background-color:#f0efef;color:#000;}
+.xc_container .libody p{text-align:left;line-height:40px;}
+.xc_container .libody .imglist{float:left;margin:7px 15px 0px 15px;width:15px;height:15px;}
+.xc_container .lidiv-1 div{overflow:hidden;}
+.xc_container .liul-1{display:flex;flex-direction:row;justify-content: space-around;padding-top:10px;}
+.xc_container .liul-1 li {width:33%;text-align:center;border-right:1px solid #000;}
+.xc_container .imglist-2{width:90px;height:90px;}
+.xc_container .liul-1 li:last-child{border-right:none;}
+.xc_container .listul li{display:flex;border-bottom:7px solid #f0efef;}
+.xc_container .listul li .lidiv-0{flex:1;}
+.xc_container .listul .lip-2{padding-top:15px;}
+.xc_container .listul  .lidiv-0 .lip-1{text-align:right;padding-right:20px;}
+.xc_container  .liul-2 p{border-bottom:1px solid #ddd;padding-left:15px;}
+.xc_container .listul-1 li {display:flex;flex-direction:row;justify-content: space-between;padding:3px 10px;}
+.xc_container  .liul-2 i{font-size:20px;}
+.xc_container .liul-2 input{width:80%;margin-left:10%;height:50px;border:1px solid #555;margin:10px 0px 30px 10%;}
+.xc_container .listfooter{display:flex;flex-direction:row;justify-content:flex-end;color:#fff;line-height:30px;padding-top:10px;font-size:12px;}
+.xc_container .listfooter button{list-style-type:none;background:none;border:none;color:#fff;width:80px;background-color:red;margin: 0px 20px;}
+.lip-1{
+    display:flex;justify-content:space-between;
+    .gt{
+        font-size:12px;color:#bbb;
+    }
+}
+.total_price{
+    color:orange;
+}

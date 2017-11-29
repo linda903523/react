@@ -1,0 +1,67 @@
+@import '../../utils/var.scss';
+
+.issueGoods {
+	padding: 20px;
+	width: 1000px;
+	> div {
+		margin-bottom: 20px;
+	}
+	input {
+		display: inline-block;
+		width: 400px;
+	}
+
+	label > span {
+		display: inline-block;
+		width: 100px;
+		text-align: right;
+		margin-right: 20px;
+	}
+	p {
+		display: inline-block;
+		width: 100px;
+	}
+	input[type="text"] {
+		width: 260px;
+		margin-right: 6px;
+	}
+	.paramsModule {
+		> label {
+			display: inline-block;
+			margin-bottom: 34px;
+		}
+		> button {
+			margin-bottom: 34px;
+		}
+	}
+	.formModule {
+		margin-bottom: 40px;
+		padding-left: 34px;
+	}
+	.selectDiv {
+		display: block;
+		width: 60%;
+		margin: 20px 0;
+		margin-left: 120px;
+	}
+	.windowFooter {
+		padding: 12px 0;
+		margin-left: 40px;
+		.ant-btn {	
+			width: 200px;
+			height: 40px;
+		}
+	}
+	.ant-modal-body {
+		padding: 0;
+		padding-top: 40px
+	}
+}
+
+.ant-message-notice-content {
+	padding: 70px;
+}	
+
+.ant-message-loading {
+
+}

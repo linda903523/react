@@ -1,0 +1,62 @@
+@import '../../utils/var.scss';
+
+.login {
+	// border: 1px solid #ddd;
+	padding: 0px 80px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	letter-spacing: 2px;
+	h1 {
+		text-align: center;
+		line-height: 80px;
+		color: $main;
+		font-weight: bold;
+	}
+	> p {
+		text-align: center;
+		margin-bottom: 60px;
+		font-weight: bold;
+		color: #999;
+	}
+	input {
+		display: block;
+		width: 300px;
+		border: none;
+		border-bottom: 1px solid #ddd;
+		background: none;
+		padding: 6px 0px;
+		margin-bottom: 40px;
+		font-size: 14px;
+		letter-spacing: 2px;
+		caret-color:$main;
+
+		&:first-of-type {
+			margin-bottom: 20px;
+		}
+	}
+	label {
+		> span {
+			font-size: 10px;
+			display: block;
+			margin-bottom: 4px;
+			color: #bbb;
+		}
+	}
+	.tips {
+		height: 20px;
+		line-height: 20px;
+		color: $warn;
+		text-align: center;
+	}
+	button {
+		display: block;
+		width: 200px;
+		height: 44px;
+		border-radius: 40px;
+		margin: 20px auto;
+		background: $main;
+		color: #fff;
+	}
+}
