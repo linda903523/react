@@ -1,6 +1,6 @@
 # test
 
-> A Vue.js project
+> A React + Redux Project
 
 ## Build Setup
 
