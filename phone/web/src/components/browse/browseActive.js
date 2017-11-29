@@ -19,6 +19,15 @@ export function browse(){
         }
     }
 }
+export function browse3(){
+    return{
+        types:['Beforedetail', 'browse2', 'detailError'],
+        url:baseUrl+'browse.php',
+        data:{
+            name:username,
+        }
+    }
+}
 export function browse4(item){
  var goodsid = item.id;
     return{

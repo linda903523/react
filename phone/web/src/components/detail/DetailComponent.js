@@ -146,10 +146,12 @@ class DetailComponent extends React.Component{
                                 (this.props.dataset || []).map((obj,idx)=>{
                                     return (
                                         <li key={'del2'+idx}>
-                                            <img src={obj.img} className="_imgsrc"/>
-                                            <div>
-                                                <p className="_goodsname">{obj.name}</p>
-                                                <strong className="_goodsprice">{obj.price}</strong>元
+                                            <div className="fl_box">
+                                                <img src={obj.img} className="_imgsrc"/>
+                                                <div>
+                                                    <p className="_goodsname">{obj.name}</p>
+                                                    <strong className="_goodsprice">{obj.price}元</strong>
+                                                </div>
                                             </div>
                                             <p onClick={this.props.choseColor.bind(this)} className="goc">颜色<em>{obj.color.substr(0,3)}</em><em>{obj.color.substr(4)}</em>
                                             </p>

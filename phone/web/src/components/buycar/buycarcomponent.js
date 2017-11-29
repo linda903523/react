@@ -178,7 +178,7 @@ class BuycarComponent extends React.Component{
                             <i className="glyphicon glyphicon-trash shan" onClick={this.props.allshan}></i>
                             <p>毒物宠店<a className="buya">[满399.0顺风包邮]</a></p>
                         </div>
-                        <Link to="shopping"><i className="glyphicon glyphicon-menu-right"></i></Link>
+                        <Link to="shopping" className="fl_icon"><i className="glyphicon glyphicon-menu-right"></i></Link>
                     </div>
                     <ul className="bul">
                         {

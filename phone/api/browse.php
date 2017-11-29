@@ -7,8 +7,8 @@
     $delename = isset($_REQUEST['delename']) ? $_REQUEST['delename'] : '';
     $goodsidx = isset($_REQUEST['goodsidx']) ? $_REQUEST['goodsidx'] : '';
     if(isset($_REQUEST['delename'])){
-        $sqlc="delete  from browse where username='$delename' and goodsid=$goodsidx";
-         $resultc=$conn->query($sqlc);
+        $sqlc="delete from browse where username='$delename' and goodsid=$goodsidx";
+        $resultc=$conn->query($sqlc);
         $sqll = "select * from browse where username='$delename' ";
         $resultl=$conn->query($sqll);
         $row = $resultl->fetch_all(MYSQLI_ASSOC);
@@ -63,7 +63,7 @@
             array_push($y,$time);
         }
         $b=implode(",",$b);
-        $sqlc="select*from goods where id in(".($b).")";
+        $sqlc="select * from goods where id in(".($b).")";
         $resultc=$conn->query($sqlc);
         $row = $resultc->fetch_all(MYSQLI_ASSOC);
         $m=array();
@@ -82,7 +82,7 @@
         echo json_encode($m,JSON_UNESCAPED_UNICODE);
     }
     if(isset($_REQUEST['name'])){
-        $sqlc="delete  from browse where username='$namec'";
+        $sqlc="delete from browse where username='$namec'";
         $result=$conn->query($sqlc);
         echo json_encode('',JSON_UNESCAPED_UNICODE);
     }

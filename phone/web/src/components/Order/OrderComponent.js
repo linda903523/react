@@ -33,8 +33,7 @@ class OrderComponent extends React.Component{
             dia1:0,
             dia2:0,
             dia3:0
-        };
-            
+        };          
     }
     componentDidMount(){
         this.props.number1();
@@ -49,26 +48,26 @@ class OrderComponent extends React.Component{
 
     }
     render(){
-         var dia1=0;
-         var dia2=0;
-         var dia3=0;
-         for(var i=0;i<this.props.order.length;i++){
+        var dia1=this.dia1;
+        var dia2=this.dia2;
+        var dia3=this.dia3;
+        for(var i=0;i<this.props.order.length;i++){
             if(this.props.order[i][0].status==1){
-                    dia1+=1;
+                dia1+=1;
             }else if(this.props.order[i][0].status==2){
-                    dia2+=1;
+                dia2+=1;
             }else {
                 dia3+=1;
             }
         }
 
          var lis = <ul className="Oul-1">
-                    <li><Link to="all">全部</Link>{this.props.order.length>0?<span className="spanhid">{this.props.order.length}</span>:''}</li>
-                    <li><Link to="shipments">待付款</Link>{dia1>0?<span className="spanhid">{dia1}</span>:''}</li>
-                    <li><Link to="await">待发货</Link>{dia2>0?<span className="spanhid">{dia2}</span>:''}</li>
-                    <li><Link to="receiving">待收货</Link>{dia3>0?<span className="spanhid">{dia3}</span>:''}</li>
-                    <li><Link to="evaluate">待评价</Link></li>
-                </ul>
+            <li><Link to="all">全部</Link>{this.props.order.length>0?<span className="spanhid">{this.props.order.length}</span>:''}</li>
+            <li><Link to="shipments">待付款</Link>{dia1>0?<span className="spanhid">{dia1}</span>:''}</li>
+            <li><Link to="await">待发货</Link>{dia2>0?<span className="spanhid">{dia2}</span>:''}</li>
+            <li><Link to="receiving">待收货</Link>{dia3>0?<span className="spanhid">{dia3}</span>:''}</li>
+            <li><Link to="evaluate">待评价</Link></li>
+        </ul>
 
         return (
             <div className="xc_container">

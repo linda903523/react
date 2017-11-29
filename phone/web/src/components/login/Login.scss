@@ -3,7 +3,7 @@
 #main{flex:10; display:flex; flex-direction:column; padding-top:20%; background:white;
     input{width:66%; height:26px; margin:20px 0px; border:0px; background:white; border-radius:25px 25px;text-align:center;border:1px solid #ddd}
     .active{ box-sizing:border-box;}
-    leble{width:100%;
+    leble{width:90%;
         span{text-align:center; display:inline-block; color:#222;}
     }
 }
@@ -17,7 +17,7 @@
 .register{display:flex;flex-direction:column;padding-left:10%;
     >leble{position:relative;
         span{width:22%;text-align:left;color:#222;}
-        >i{display:block; background:#fff; width:50px; line-height:23px; position:absolute; top:-4px; right:-53px; text-align:center;color:red;border:1px solid red;border-radius:10px;}
+        >i{display:block; background:#fff; width:50px; line-height:23px; position:absolute; top:20px; right:-20px; text-align:center;color:red;border:1px solid red;border-radius:10px;}
         >p{color:red; text-align:center; display:none;}
     }
 }

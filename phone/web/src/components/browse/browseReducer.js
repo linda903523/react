@@ -8,6 +8,10 @@ export default function BrowseReducer(state = {},action){
             reState.loading = false;
             reState.dataset = action.dataset;
             break;
+        case 'browse2':
+            reState.loading = false;
+            reState.dataset = action.dataset;
+            break;
         case 'browse3':
             reState.loading = false;
             reState.dataset = action.dataset;

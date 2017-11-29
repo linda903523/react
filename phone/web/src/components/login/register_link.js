@@ -60,7 +60,7 @@ class Registers extends Component{
         // var value = this.state.value;
         return (      
             <div className="register">
-                <leble><span>设置用户名</span><input type="text" onBlur={this.blueReg} className="register_user" placeholder="只能用中文" />
+                <leble><span>用户名</span><input type="text" onBlur={this.blueReg} className="register_user" placeholder="只能用中文" />
                     <p>判断中</p>
                 </leble>
                 <leble><span>设置密码</span><input type="password" onBlur={this.bluePass} onFocus={this.bluePAss} className="register_pass" placeholder="必须字母开头·数字·字母 6-18" />
