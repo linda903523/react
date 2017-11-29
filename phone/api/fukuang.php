@@ -1,16 +1,5 @@
 <?php
- $servername = 'localhost';
-    $username = 'root';
-    $password = '';
-    $database = 'react';
-    // 1）连接数据库
-    $conn = new mysqli($servername,$username,$password,$database);
-    // 检测连接
-    if($conn->connect_errno){
-        die('连接失败：'.$conn->connect_error);
-    }
-    $conn->set_charset('utf8');
-    header("Access-Control-Allow-Origin: *");
+    include 'connect.php';
     $username = isset($_REQUEST['username']) ? $_REQUEST['username'] : 1;
 
     $sql="select * from list where username= '$username' and status=2";
