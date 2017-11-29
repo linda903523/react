@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d9e3537c50a77405c5f9e08e228aff68d526125b
 # test
 
 > A Vue.js project
