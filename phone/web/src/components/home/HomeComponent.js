@@ -35,8 +35,10 @@ class HomeComponent extends React.Component{
     }
 
     changeColor(scrollTop){
-        if(this.refs.top){
-            this.refs.top.changeColor(scrollTop)
+        if(scrollTop>150){
+            $('.hometop').addClass('bc')
+        }else{
+            $('.hometop').removeClass('bc')
         }            
     }
 }

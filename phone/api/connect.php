@@ -2,7 +2,8 @@
 	// 配置参数
 	$servername = 'localhost';
 	$username = 'root';
-	$password = 'fuling903523';
+	$password = '';
+	// $password = 'fuling903523';
 	$database = 'react';
 
 	// 1）连接数据库
