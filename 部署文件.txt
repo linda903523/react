@@ -1,3 +1,5 @@
+小组成员：张育铭（组长）、张子聪、付玲、徐翠、袁守明
+
 web端
  1.在wampserver64 配置好php的端口和访问路径,即项目的api地址，如'C:\Users\Administrator\Desktop\eb\react'；
  2.进入项目的路径'src/utils/baseUrl'修改api的bathURL 如'http://10.3.137.199:80/api/';
