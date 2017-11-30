@@ -15,7 +15,7 @@ export function browse(){
         types:['Beforedetail', 'browse1', 'detailError'],
         url:baseUrl+'browse.php',
         data:{
-            username:username,
+            username:username
         }
     }
 }
@@ -24,7 +24,7 @@ export function browse3(){
         types:['Beforedetail', 'browse2', 'detailError'],
         url:baseUrl+'browse.php',
         data:{
-            name:username,
+            name:username
         }
     }
 }
@@ -35,7 +35,7 @@ export function browse4(item){
         url:baseUrl+'browse.php',
         data:{
             goodsidx:goodsid,
-            delename:username,
+            delename:username
         }
     }
 }

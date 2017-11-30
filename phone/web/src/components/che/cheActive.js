@@ -17,14 +17,3 @@ export function carlist1(){
         data:{username:username}
     }
 }
-// export function browse1(){
-//     var cookies = document.cookie;
-//     var username = cookies.slice(8,-1);
-//     return{
-//         types:['Beforedetail', 'browse2', 'detailError'],
-//         url:baseUrl+'browse.php',
-//         data:{
-//             username:username,
-//         }
-//     }
-// }

@@ -1,6 +1,6 @@
 import baseUrl from '../../utils/baseUrl.js';
 
-var username=''
+var username='';
 var cookies = document.cookie;
 if(cookies.length>0){
     cookies = cookies.split('; ');
@@ -17,7 +17,7 @@ export function browse1(){
         types:['Beforedetail', 'browse2', 'detailError'],
         url:baseUrl+'browse.php',
         data:{
-            username:username,
+            username:username
         }
     }
 }

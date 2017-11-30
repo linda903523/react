@@ -1,6 +1,6 @@
 import baseUrl from '../../utils/baseUrl.js';
 
-var username=''
+var username='';
 var cookies = document.cookie;
 if(cookies.length>0){
     cookies = cookies.split('; ');

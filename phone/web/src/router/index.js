@@ -10,7 +10,6 @@ import DetailComponent from '../components/detail/DetailComponent.js';
 import LoginComponent from '../components/login/LoginComponent'
 import Login from '../components/login/login_link'
 import Register from '../components/login/register_link'
-import IndComponent from '../components/ind/ind'
 import MyComponent from '../components/my/MyComponent';
 import OrderComponent from '../components/Order/OrderComponent';
 import AllComponent from '../components/all/allComponent';

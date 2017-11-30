@@ -21,14 +21,6 @@ class AllComponent extends React.Component{
         this.props.confirm(username);
     }
     render(){
-        // var span= document.getElementsByClassName('spanhid');
-        // if(this.props.alldata.length=!0){
-        //      if(span.length>0){
-        //         span[0].innerHTML=this.props.alldata.length;
-        //         span[0].style.display='block';
-        //     }
-            
-        // }
         return (
             <div>
             {

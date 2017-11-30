@@ -6,7 +6,7 @@ import {Router, Route, Link, hashHistory, IndexRoute} from 'react-router';
 import './search.scss';
 import PopWindowComponent from '../../components/popwindow/PopWindowPomponent.js';
 
-var username;
+var username = '';
 var cookies = document.cookie;
 if(cookies.length>0){
     cookies = cookies.split('; ');

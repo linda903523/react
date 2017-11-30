@@ -21,7 +21,6 @@ $(event.target).toggleClass("ccallcolor");
     }
 }
 export function status1(number){
-
     var username=number[0].username;
     var ordernumber = number[0].ordernumber;
     var status = number[0].status;

@@ -5,10 +5,6 @@ import * as ListOrderAction from './ListOrderAction';
 import './ListOrder.scss';
 
 class ListOrderComponent extends React.Component{
-    componentDidMount(){
-        // this.props.Init9();
-        // this.props.Init8(this.props.list)
-    }
     back(){
         this.props.router.goBack();
     }
