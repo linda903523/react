@@ -1,12 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
+
 import './Issue.scss';
 import * as IssueAction from './IssueAction';
 import FormComponent from '../form/FormComponent';
-import { Input, Button, Select, Upload, message, Icon } from 'antd';
 
+import { Input, Button, Select, Upload, message, Icon } from 'antd';
 const Option = Select.Option;
+/*
+	
+	constructor() {
+	   super();
+	   this.state = {
+	      options: [{
+	      	value: 'aa',
+	      	html: 'aaaa'
+	      },{
+	      	value: 'bbb',
+	      	html: 'bbbbb'
+	      },{
+	      	value: 'asasdsa',
+	      	html: 'asasdsaa'
+	      }]
+	   };
+	}
+*/
 
 //设置提示框
 message.config({
@@ -14,12 +33,12 @@ message.config({
 });
 
 const formParams = {
-	goodsClassify: '衣服',
-	collocate: [{
-		name: '',
-		list: []
-	}]
-}
+	    	goodsClassify: '衣服',
+	    	collocate: [{
+	    		name: '',
+	    		list: []
+	    	}]
+	   }
 
 const type = 'issueGoods';
 
@@ -49,10 +68,12 @@ class IssueComponent extends React.Component{
 			type: 'issueGoods',
 			data: JSON.stringify(newParams)
 		}
+		console.log('a',this.props)
 		this.props.issueGoods(this.props.location.state.state.api, newGoodsParams);
 	}
 
 	render(){
+
 		return (
 		   <div className="issueGoods">
 				<FormComponent 

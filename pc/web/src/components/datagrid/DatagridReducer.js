@@ -8,11 +8,27 @@ export default function SalingGoodsReducer(state = {}, action){
 			break;
 
 		case 'Requested':
+			// console.log(12312)
 			reState.loading = false;
 			reState.dataset = JSON.parse(action.dataset);
-			break;		
+			break;
+
+		/*case 'BeforeDel':
+			reState.loading = true;
+			break;
+
+		case 'Deled':
+			reState.loading = false;
+			reState.*/
+		
 		default:
 			reState.loading = false;
 	}
+	// console.log(reState)
 	return reState;
 }
+
+/*
+	case 'TEST_MODLES' : 
+		return 'aaaa'
+*/

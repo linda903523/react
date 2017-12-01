@@ -1,3 +1,4 @@
+
 export function getSelectList(api){
 	return {
 		types: ['BeforeGetSelect', 'GetSelected'],

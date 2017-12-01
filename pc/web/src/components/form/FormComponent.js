@@ -1,16 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as FormAction from './FormAction';
-import { Input, Button, Select, Upload, message, Icon } from 'antd';
 
+import * as FormAction from './FormAction';
+
+import { Input, Button, Select, Upload, message, Icon } from 'antd';
 const Option = Select.Option;
 
 //设置提示框
 message.config({
-  	top: 100
+  top: 100
 });
 
 class FormComponent extends React.Component{
+
 	constructor(props){
 		super(props);
 		this.state = {
@@ -78,6 +80,11 @@ class FormComponent extends React.Component{
 	
 	//发布新品
 	onPutData(){
+		/*const newGoodsParams = {
+			type: this.type,
+			data: JSON.stringify(this.formParams)
+		}*/
+		// this.props.issueGoods(this.api, newGoodsParams);
 		this.props.onIssueGoods(this.formParams)
 		message.success('发布成功');
 	}
@@ -139,7 +146,17 @@ class FormComponent extends React.Component{
 							onBlur={ this.addFormParams.bind(this, 'goodsSale', event) }
 						/>
 			   	</label>
-		   	</div>
+		   	</div>{/*
+		   	<div className="priceModule formModule">
+			   	<label htmlFor="">
+						<span>原价</span>
+						<Input 
+							defaultValue={ this.formParams.goodsPrice || null } 
+							placeholder="输入原价"
+							onBlur={ this.addFormParams.bind(this, 'goodsPrice', event) }
+						/>
+			   	</label>
+		   	</div>*/}
 		   	<div className="paramsModule formModule">
 		   		<label>
 		   			<span>选择参数</span>
@@ -187,6 +204,7 @@ class FormComponent extends React.Component{
 }
 
 const tateToProps = function(state){
+	console.log('sta', state)
 	return {
 		optionList: state.form.optionList || []
 	}

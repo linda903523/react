@@ -16,5 +16,11 @@ export default function SalingGoodsReducer(state = {}, action){
 		default:
 			reState.loading = false;
 	}
+	// console.log(reState)
 	return reState;
 }
+
+/*
+	case 'TEST_MODLES' : 
+		return 'aaaa'
+*/

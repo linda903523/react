@@ -1,21 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
+
 import * as DatagridAction from './DatagridAction';
 import './Datagrid.scss';
-import FormComponent from '../form/FormComponent';
-import { Popconfirm, message, Menu, Breadcrumb, Icon, Pagination, Button, Input, Modal, Select } from 'antd';
 
+import FormComponent from '../form/FormComponent';
+
+import { Popconfirm, message, Menu, Breadcrumb, Icon, Pagination, Button, Input, Modal, Select } from 'antd';
 const SubMenu = Menu.SubMenu;
 const Option = Select.Option;
 
+
+//表单组件参数
+/*
+<FormComponent 
+	formParams={formParams} 
+	onIssueGoods={ this.onIssueGoods.bind(this) }
+/>
+*/
 const formParams = {
-	goodsClassify: '衣服',
-	collocate: [{
-		name: '',
-		list: []
-	}]
-}
+	    	goodsClassify: '衣服',
+	    	collocate: [{
+	    		name: '',
+	    		list: []
+	    	}]
+	   }
 for (let i = 10; i < 10; i++) {
 	formParams.collocate.list.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
 }
@@ -28,6 +38,12 @@ const searchTxt = {
 };
 
 var pageNum = {};
+
+//如果参数中有 可编辑
+/*if(location.state.edit){
+	var edit = <th>编辑</th>;
+	var editBtn = <td><button onclick={this.handleClick.bind(this)}>编辑</button></td>;
+}*/
 
 class DatagridComponent extends React.Component{
 	constructor(props){
@@ -42,7 +58,15 @@ class DatagridComponent extends React.Component{
 		
 	}
 	componentDidMount(){
+		/*this.props.Begin().then(response => {
+		           console.log(response)
+		       });*/
 		this.props.dataGridInit(this.props.api.state.api);
+		/*const { dataset } = this.props;
+		const { index } = dataset
+		this.setState({
+			index
+		})*/
 	}
 	//选择搜索条件
 	changeSearchOpt(idx){
@@ -53,6 +77,7 @@ class DatagridComponent extends React.Component{
 	}
 	//搜索框失去焦点，保存输入的内容
 	saveSearchTxt(e){
+		console.log('e', e.target.value)
 		searchTxt.content = e.target.value;
 	}
 	//搜索按钮点击
@@ -68,7 +93,12 @@ class DatagridComponent extends React.Component{
 	 * @param {String} pageSize - jj
 	 * @retun {String}
 	*/
+	/*onShowSizeChange(current, pageSize) {
+	  this.props.salingGoodsInit(current, pageSize);
+	  // this.setState({index:this.state.index++})
+	}*/
 	onChange(page, pageSize){
+		console.log('222', this.props)
 		let params = {
 			type: 'getTotal',
 			pageNo: page,
@@ -92,8 +122,19 @@ class DatagridComponent extends React.Component{
  		const newGoodsParams = {
  			type: 'issueGoods'
  		}
+ 		console.log('a',this.props)
+ 		// self.props.issueGoods(this.props.api.state.api, formParams);
  		this.onChange(1, 10)
  	}
+	
+	/*handleClick(){
+		const key = {};
+		key.index = 1;
+		key.name = 'jack';
+		//
+		const { salingGoodsInit } = this.props;
+		salingGoods(key)
+	}*/
 	//点击编辑按钮
 	onEdit(btn, idx, self, location){
 		const temp = [...self.props.dataset.data][idx];
@@ -133,6 +174,22 @@ class DatagridComponent extends React.Component{
 			visible: true,
 			saveNewData: formParams
 		});
+		/*if(btn == 'edit'){
+			//已经处于编辑状态
+			if(newData[idx]['isAlter']){
+				newData.map((item, i) => {
+					if(i == idx){
+						return (
+							item.showInput = false,
+							item.isAlter = false
+						)
+					} else {
+						return item;
+					}
+				})
+
+		self.setState({data: newData})
+		console.log(newData, self)*/
 	}
 
 	//点击删除按钮
@@ -160,9 +217,11 @@ class DatagridComponent extends React.Component{
 	}
 	
 	render(){
+
 		let arr = this.props.dataset;
 		let location = this.props.api.state;
 		const self = this;
+
 		const { visible, confirmLoading, ModalText } = this.state;
 
 		return (
@@ -296,6 +355,7 @@ class DatagridComponent extends React.Component{
 }
 
 const stateToProps = function(state){
+	console.log('state', state)
 	return {
 		dataset: state.datagrid.dataset || []
 		
@@ -303,3 +363,86 @@ const stateToProps = function(state){
 }
 
 export default connect(stateToProps, DatagridAction)(DatagridComponent);
+
+/*
+	//渲染编辑按钮
+	renderEdit(location, isTh){
+		if(location.edit){
+			if(isTh == 'th'){
+				return <th>编辑</th>
+			} else {
+				return <td><Button key={'edit' + isTh}>编辑</Button></td>
+			}
+		}
+	}
+	//渲染删除按钮
+	renderDel(location, isTh){
+		if(location.del){
+			if(isTh == 'th'){
+				return <th>删除</th>
+			} else {
+				return <td><Button key={'del' + isTh}>删除</Button></td>
+			}
+		}
+	}
+
+	//渲染tbody
+	renderGridBody(location, arr, self){
+		console.log(this.props.dataset)
+		if(this.props.dataset.data){
+			return (
+			   this.props.dataset.data.map(function(val, idx){
+				return (<tr key={ 'tr' + idx }>
+					{
+						Object.keys(val).map(function(key, i){
+							if(location.th.en.indexOf(key) > -1){
+								return <td key={ 'td' + i }>{val[key]}</td>
+							}
+						})
+						
+					}
+					{ self.renderEdit(location, idx) }
+					{ self.renderDel(location, idx) }
+					</tr>)
+				})
+			)
+		}
+	}
+*/
+
+/*
+	 width ="100px"  style = {{"disply:${}``}}>
+	return (
+	 	 	<div>
+	 	 		<h2>{console.log('props', this.props.location)}</h2>
+	 	 		<table>
+	 	 			<thead>
+	 	 				<tr>
+	 	 					{
+	 	 						location.state.th.cn.map(function(key, idx){
+	 	 							return <th key={'th' + idx}>{key}</th>
+	 	 						})
+	 	 					}{ edit }
+	 	 				</tr>
+	 	 			</thead>
+	 	 			<tbody>
+	 	 				{
+	 	 					this.props.dataset.map(function(val, idx){
+	 	 						return (<tr key={ 'tr' + idx }>
+	 								{
+	 									Object.keys(val).map(function(key, i){
+	 										if(location.state.th.en.indexOf(key) > -1){
+	 											return <td key={ 'td' + i }>{val[key]}</td>
+	 										}
+	 										this.shouldRender(i)
+	 									})
+	 								}{ editBtn }
+	 	 						</tr>)
+	 	 					})
+	 	 				}
+	 	 			</tbody>
+	 	 		</table>
+	 	 		<Pagination showSizeChanger onShowSizeChange={this.onShowSizeChange} defaultCurrent={3} total={500} />
+	 	 	</div>
+	)
+*/

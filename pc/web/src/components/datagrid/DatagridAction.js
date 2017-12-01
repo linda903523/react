@@ -9,6 +9,10 @@ export function dataGridInit(api, params){
 			pageSize: 10
 		}
 	}
+	/*return {
+		type:TEST_MODLES,
+		payload:val
+	}*/
 }
 
 export function dataGridSearch(api, params){

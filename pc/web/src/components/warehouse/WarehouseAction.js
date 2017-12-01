@@ -1,3 +1,4 @@
+
 export function salingGoodsInit(api, params){
 	return {
 		types: ['BeforeRequest', 'Requested', 'RequestError'],

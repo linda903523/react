@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { hashHistory } from 'react-router';
 import { browserHistory } from 'react-router';
+
 import * as LoginAction from './LoginAction';
 import './Login.scss';
+
 import { Button } from 'antd';
-import baseUrl from '../../utils/baseUrl.js';
 
 class LoginComponent extends React.Component {
 	constructor(props){
@@ -20,6 +21,10 @@ class LoginComponent extends React.Component {
 			password: ''
 		}
 	}
+
+	/*contextTypes: {
+	    router: React.PropTypes.object
+	  }*/
 
 	//收集表单信息
 	getFormdata(type, e) {
@@ -39,7 +44,7 @@ class LoginComponent extends React.Component {
 			this.setState({
 				loadingShow: true
 			})
-			this.props.loginUser(baseUrl, this.msg).then(response => {
+			this.props.loginUser('http://10.3.137.195:9000/getData.php', this.msg).then(response => {
 	         if(JSON.parse(response).status == 'ok'){
 					sessionStorage.setItem('username', this.msg.username);
 					timer = setTimeout(function(){

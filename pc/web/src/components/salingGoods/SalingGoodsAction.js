@@ -9,5 +9,9 @@ export function salingGoodsInit(api, params){
 			pageSize: 12
 		}
 	}
+	/*return {
+		type:TEST_MODLES,
+		payload:val
+	}*/
 }
 

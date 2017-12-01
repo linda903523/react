@@ -9,5 +9,7 @@ import {
 export default function configStore(){
 	let middleware = applyMiddleware(ajaxMiddleware);
 	const store = createStore(rootReducer, middleware);
+	// const store = createStore(rootReducer);
+
 	return store;
 }

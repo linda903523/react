@@ -1,9 +1,7 @@
-import baseUrl from '../../utils/baseUrl.js';
-
 export function aa(){
     return {
         types: ['BeforeRequest', 'Requested', 'RequestError'],
-        url: baseUrl
+        url: 'http://10.3.137.222:9000/getData.php'
     }
 }
 

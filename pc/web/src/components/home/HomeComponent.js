@@ -2,15 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Router, Route, Link, hashHistory, browserHistory } from 'react-router';
+
+// import { HomeAction } from './HomeAction';
 import * as HomeAction from './HomeAction';
 import SpinnerComponent from '../spinner/spinner';
-import { Modal, Button, Carousel, Menu, Breadcrumb, Icon, Spin } from 'antd';
-import baseUrl from '../../utils/baseUrl.js';
-import './Home.scss';
 
+
+import { Modal, Button, Carousel, Menu, Breadcrumb, Icon, Spin } from 'antd';
 const SubMenu = Menu.SubMenu;
 const confirm = Modal.confirm;
 
+import './Home.scss';
 
 const th = {
 	salingGoods: {
@@ -22,10 +24,22 @@ const th = {
 		cn: ['商品编号', '商品名称', '商品图片', '销售价', '库存', '商品分类', '商品描述', '颜色', '尺寸'],
 		en: ['id', 'name', 'img', 'price', 'number', 'type', 'decorations', 'color', 'size'],
 		disable: ['id', '商品编号']
-	}
+	}/*,
+	goods: [
+		{cn: '商品编号', en: 'id', noShow: true},
+		{cn: '商品名称', en: 'name'},
+		{cn: '商品图片', en: 'img'},
+		{cn: '销售价', en: 'price'},
+		{cn: '库存', en: 'number'},
+		{cn: '商品分类', en: 'type', noShow: true},
+		{cn: '商品描述', en: 'decorations'},
+		{cn: '颜色', en: 'color'},
+		{cn: '尺寸', en: 'size'}
+	]*/
 }
 
-class HomeComponent extends React.Component{	
+class HomeComponent extends React.Component{
+	
 	constructor(props){
 		super(props);
 		this.state = {
@@ -40,12 +54,12 @@ class HomeComponent extends React.Component{
 						th: th.salingGoods,
 						edit: true,
 						del: true,
-						api: baseUrl
+						api: 'http://10.3.137.195:9000/getData.php'
 					}
 				},
 				issue: {//发布新品模块
 					state: {
-						api: baseUrl
+						api: 'http://10.3.137.195:9000/getData.php'
 					}
 				},
 				warehouse: {//仓库中的商品模块
@@ -53,12 +67,17 @@ class HomeComponent extends React.Component{
 						th: th.warehouse,
 						edit: true,
 						del: true,
-						api: baseUrl
+						api: 'http://10.3.137.195:9000/getData.php'
 					}
 				}
 			}
 		}
 	}
+/*
+	componentDidMount(){
+		console.log()
+		this.setS
+	}*/
 
 	onSignOut = (self) => {
 		confirm({
@@ -77,7 +96,8 @@ class HomeComponent extends React.Component{
 	render(){
 		const self = this;
 		return (
-			<div>				
+			<div>
+				
 				<div className="ant-layout-aside">
 					<aside className="sider">
 					  	<div className="logo">
@@ -169,6 +189,7 @@ class HomeComponent extends React.Component{
 					    	<div className="content">
 					    		<Spin className="loadingShow" size="large" spinning={this.props.loading} />
 					      	{this.props.children}
+					      	{console.log(this.props)}
 					    	</div>
 					  	</div>
 					</div>
@@ -185,3 +206,16 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, HomeAction)(HomeComponent);
+
+/*
+	<div>
+		<h1>asdasdasdsa</h1>
+		<button onClick={this.props.aa}>aaa</button>
+		<ul>
+			<li>
+			</li>
+		</ul>
+		<h2>{this.props.bc}bbb</h2>
+		<button onClick={this.props.bb}>bbbbb</button>
+	</div>
+*/
